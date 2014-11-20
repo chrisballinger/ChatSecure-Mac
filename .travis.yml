@@ -1,0 +1,21 @@
+language: objective-c
+
+# Handle git submodules yourself
+# http://stackoverflow.com/a/24600210/805882
+git:
+    submodules: false
+
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
+before_install:
+    - sed -i -e 's/git@github.com:/git:\/\/github.com\//' .gitmodules
+    - sed -i -e 's/git@github.com:/git:\/\/github.com\//' Podfile
+    - git submodule update --init --recursive
+
+install:
+  - export ARCHS="x86_64"   # Only build CPAProxy dependencies for i386 to speed things up
+  - bash ./Submodules/CPAProxy/scripts/build-all.sh
+  - bash ./Submodules/OTRKit/scripts/build-all.sh
+
+script:
+  - xctool -workspace ChatSecure.xcworkspace -scheme ChatSecure -sdk macosx -arch x86_64 build
+

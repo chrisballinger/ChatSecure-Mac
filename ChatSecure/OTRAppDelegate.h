@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  OTRAppDelegate.h
 //  ChatSecure
 //
 //  Created by Christopher Ballinger on 11/19/14.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface OTRAppDelegate : NSObject <NSApplicationDelegate>
 
 
 @end

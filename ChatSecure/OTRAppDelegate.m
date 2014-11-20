@@ -1,19 +1,19 @@
 //
-//  AppDelegate.m
+//  OTRAppDelegate.m
 //  ChatSecure
 //
 //  Created by Christopher Ballinger on 11/19/14.
 //  Copyright (c) 2014 Christopher Ballinger. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "OTRAppDelegate.h"
 
-@interface AppDelegate ()
+@interface OTRAppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
 @end
 
-@implementation AppDelegate
+@implementation OTRAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application

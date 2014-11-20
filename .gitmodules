@@ -1,0 +1,6 @@
+[submodule "Submodules/OTRKit"]
+	path = Submodules/OTRKit
+	url = https://github.com/ChatSecure/OTRKit.git
+[submodule "Submodules/CPAProxy"]
+	path = Submodules/CPAProxy
+	url = https://github.com/ursachec/CPAProxy
