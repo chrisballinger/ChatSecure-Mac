@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D93BAA1F1A1DA73B0087F30E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA1E1A1DA73B0087F30E /* AppDelegate.m */; };
+		D93BAA211A1DA73B0087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA201A1DA73B0087F30E /* main.m */; };
+		D93BAA231A1DA73B0087F30E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93BAA221A1DA73B0087F30E /* Images.xcassets */; };
+		D93BAA261A1DA73B0087F30E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93BAA241A1DA73B0087F30E /* MainMenu.xib */; };
+		D93BAA321A1DA73B0087F30E /* ChatSecureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA311A1DA73B0087F30E /* ChatSecureTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D93BAA2C1A1DA73B0087F30E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D93BAA101A1DA73B0087F30E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D93BAA171A1DA73B0087F30E;
+			remoteInfo = ChatSecure;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D93BAA181A1DA73B0087F30E /* ChatSecure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSecure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93BAA1C1A1DA73B0087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D93BAA1D1A1DA73B0087F30E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D93BAA1E1A1DA73B0087F30E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D93BAA201A1DA73B0087F30E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D93BAA221A1DA73B0087F30E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D93BAA251A1DA73B0087F30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D93BAA2B1A1DA73B0087F30E /* ChatSecureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSecureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93BAA301A1DA73B0087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D93BAA311A1DA73B0087F30E /* ChatSecureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatSecureTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D93BAA151A1DA73B0087F30E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D93BAA281A1DA73B0087F30E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D93BAA0F1A1DA73B0087F30E = {
+			isa = PBXGroup;
+			children = (
+				D93BAA1A1A1DA73B0087F30E /* ChatSecure */,
+				D93BAA2E1A1DA73B0087F30E /* ChatSecureTests */,
+				D93BAA191A1DA73B0087F30E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D93BAA191A1DA73B0087F30E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D93BAA181A1DA73B0087F30E /* ChatSecure.app */,
+				D93BAA2B1A1DA73B0087F30E /* ChatSecureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D93BAA1A1A1DA73B0087F30E /* ChatSecure */ = {
+			isa = PBXGroup;
+			children = (
+				D93BAA1D1A1DA73B0087F30E /* AppDelegate.h */,
+				D93BAA1E1A1DA73B0087F30E /* AppDelegate.m */,
+				D93BAA221A1DA73B0087F30E /* Images.xcassets */,
+				D93BAA241A1DA73B0087F30E /* MainMenu.xib */,
+				D93BAA1B1A1DA73B0087F30E /* Supporting Files */,
+			);
+			path = ChatSecure;
+			sourceTree = "<group>";
+		};
+		D93BAA1B1A1DA73B0087F30E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D93BAA1C1A1DA73B0087F30E /* Info.plist */,
+				D93BAA201A1DA73B0087F30E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D93BAA2E1A1DA73B0087F30E /* ChatSecureTests */ = {
+			isa = PBXGroup;
+			children = (
+				D93BAA311A1DA73B0087F30E /* ChatSecureTests.m */,
+				D93BAA2F1A1DA73B0087F30E /* Supporting Files */,
+			);
+			path = ChatSecureTests;
+			sourceTree = "<group>";
+		};
+		D93BAA2F1A1DA73B0087F30E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D93BAA301A1DA73B0087F30E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D93BAA171A1DA73B0087F30E /* ChatSecure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D93BAA351A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecure" */;
+			buildPhases = (
+				D93BAA141A1DA73B0087F30E /* Sources */,
+				D93BAA151A1DA73B0087F30E /* Frameworks */,
+				D93BAA161A1DA73B0087F30E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChatSecure;
+			productName = ChatSecure;
+			productReference = D93BAA181A1DA73B0087F30E /* ChatSecure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D93BAA2A1A1DA73B0087F30E /* ChatSecureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D93BAA381A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecureTests" */;
+			buildPhases = (
+				D93BAA271A1DA73B0087F30E /* Sources */,
+				D93BAA281A1DA73B0087F30E /* Frameworks */,
+				D93BAA291A1DA73B0087F30E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D93BAA2D1A1DA73B0087F30E /* PBXTargetDependency */,
+			);
+			name = ChatSecureTests;
+			productName = ChatSecureTests;
+			productReference = D93BAA2B1A1DA73B0087F30E /* ChatSecureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D93BAA101A1DA73B0087F30E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Christopher Ballinger";
+				TargetAttributes = {
+					D93BAA171A1DA73B0087F30E = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					D93BAA2A1A1DA73B0087F30E = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = D93BAA171A1DA73B0087F30E;
+					};
+				};
+			};
+			buildConfigurationList = D93BAA131A1DA73B0087F30E /* Build configuration list for PBXProject "ChatSecure" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D93BAA0F1A1DA73B0087F30E;
+			productRefGroup = D93BAA191A1DA73B0087F30E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D93BAA171A1DA73B0087F30E /* ChatSecure */,
+				D93BAA2A1A1DA73B0087F30E /* ChatSecureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D93BAA161A1DA73B0087F30E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D93BAA231A1DA73B0087F30E /* Images.xcassets in Resources */,
+				D93BAA261A1DA73B0087F30E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D93BAA291A1DA73B0087F30E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D93BAA141A1DA73B0087F30E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D93BAA211A1DA73B0087F30E /* main.m in Sources */,
+				D93BAA1F1A1DA73B0087F30E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D93BAA271A1DA73B0087F30E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D93BAA321A1DA73B0087F30E /* ChatSecureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D93BAA2D1A1DA73B0087F30E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D93BAA171A1DA73B0087F30E /* ChatSecure */;
+			targetProxy = D93BAA2C1A1DA73B0087F30E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D93BAA241A1DA73B0087F30E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D93BAA251A1DA73B0087F30E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D93BAA331A1DA73B0087F30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D93BAA341A1DA73B0087F30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D93BAA361A1DA73B0087F30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ChatSecure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D93BAA371A1DA73B0087F30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ChatSecure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D93BAA391A1DA73B0087F30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChatSecureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSecure.app/Contents/MacOS/ChatSecure";
+			};
+			name = Debug;
+		};
+		D93BAA3A1A1DA73B0087F30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChatSecureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSecure.app/Contents/MacOS/ChatSecure";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D93BAA131A1DA73B0087F30E /* Build configuration list for PBXProject "ChatSecure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D93BAA331A1DA73B0087F30E /* Debug */,
+				D93BAA341A1DA73B0087F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D93BAA351A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D93BAA361A1DA73B0087F30E /* Debug */,
+				D93BAA371A1DA73B0087F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D93BAA381A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D93BAA391A1DA73B0087F30E /* Debug */,
+				D93BAA3A1A1DA73B0087F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D93BAA101A1DA73B0087F30E /* Project object */;
+}
