@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B334028ED9B0AA2A3BBAB9B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 660D704D27F7FF52DDA2AF57 /* libPods.a */; };
 		AE9BFADCAC9C39AAA897E146 /* libPods-XMPPService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCB62AC1C45EB9F6FFA87B5 /* libPods-XMPPService.a */; };
 		C8506CA82C84E5ABEB720CFB /* libPods-ChatSecure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA245611C3E402AA5529C7DD /* libPods-ChatSecure.a */; };
 		D93BAA1F1A1DA73B0087F30E /* OTRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA1E1A1DA73B0087F30E /* OTRAppDelegate.m */; };
@@ -74,7 +73,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		660D704D27F7FF52DDA2AF57 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E124D74A1CCAAC8FDB22A6 /* Pods-XMPPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMPPService.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMPPService/Pods-XMPPService.release.xcconfig"; sourceTree = "<group>"; };
 		A459BB3D83F41CB10EACDD84 /* Pods-XMPPService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMPPService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMPPService/Pods-XMPPService.debug.xcconfig"; sourceTree = "<group>"; };
 		B326C10571F59BB24D68B2C3 /* Pods-ChatSecure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecure/Pods-ChatSecure.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B334028ED9B0AA2A3BBAB9B /* libPods.a in Frameworks */,
 				C8506CA82C84E5ABEB720CFB /* libPods-ChatSecure.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +157,6 @@
 		7C9BE55179294C0B5015B11C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				660D704D27F7FF52DDA2AF57 /* libPods.a */,
 				BA245611C3E402AA5529C7DD /* libPods-ChatSecure.a */,
 				FDCB62AC1C45EB9F6FFA87B5 /* libPods-XMPPService.a */,
 			);
@@ -931,6 +927,7 @@
 				D93BAAA51A1DB4C60087F30E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
