@@ -12,7 +12,7 @@
 @protocol XMPPServiceProtocol
 
 // Replace the API of this protocol with an API appropriate to the service you are vending.
-- (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
+- (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *upperCaseString, NSUInteger testIncrement))reply;
     
 @end
 

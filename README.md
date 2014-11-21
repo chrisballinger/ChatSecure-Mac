@@ -4,9 +4,14 @@ ChatSecure for Mac OS X. Work in progress.
 
 ## Goals
 
-* Use separate sandboxed NSXPC services for XMPP, Tor, and OTR
-* Store conversation logs in SQLCipher
+* Use separate sandboxed[1] NSXPC[2] services for [XMPP](https://en.wikipedia.org/wiki/XMPP), [Tor](https://en.wikipedia.org/wiki/Tor_(anonymity_network)), and [OTR](https://en.wikipedia.org/wiki/Off-the-Record_Messaging)
+* Store conversation logs in [SQLCipher](https://github.com/sqlcipher/sqlcipher)
 * Usable by regular humans
+
+Further reading:
+
+1. [App Sandbox in Depth](https://developer.apple.com/library/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html)
+2. [Creating XPC Services](https://developer.apple.com/library/mac/documentation/macosx/conceptual/bpsystemstartup/Chapters/CreatingXPCServices.html)
 
 ## Installation
 

@@ -8,12 +8,17 @@
 
 #import "XMPPService.h"
 
+@interface XMPPService()
+@property (nonatomic) NSUInteger testIncrement;
+@end
+
 @implementation XMPPService
 
 // This implements the example protocol. Replace the body of this class with the implementation of this service's protocol.
-- (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply {
+- (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *upperCaseString, NSUInteger testIncrement))reply {
     NSString *response = [aString uppercaseString];
-    reply(response);
+    _testIncrement++;
+    reply(response, _testIncrement);
 }
 
 @end
