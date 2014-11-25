@@ -23,6 +23,8 @@
 		D93BAA9D1A1DB4C60087F30E /* OTRService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA9C1A1DB4C60087F30E /* OTRService.m */; };
 		D93BAA9F1A1DB4C60087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA9E1A1DB4C60087F30E /* main.m */; };
 		D93BAAA21A1DB4C60087F30E /* OTRService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA961A1DB4C60087F30E /* OTRService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9AA715E1A2480420005895A /* XMPPServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA715D1A2480420005895A /* XMPPServiceManager.m */; };
+		D9AA71621A248D850005895A /* OTRSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA71611A248D850005895A /* OTRSecrets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,10 @@
 		D93BAA9C1A1DB4C60087F30E /* OTRService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTRService.m; sourceTree = "<group>"; };
 		D93BAA9E1A1DB4C60087F30E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D93BAAA61A1DB4CA0087F30E /* OTRService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OTRService.entitlements; sourceTree = "<group>"; };
+		D9AA715C1A2480420005895A /* XMPPServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPServiceManager.h; sourceTree = "<group>"; };
+		D9AA715D1A2480420005895A /* XMPPServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPServiceManager.m; sourceTree = "<group>"; };
+		D9AA71601A248D850005895A /* OTRSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRSecrets.h; sourceTree = "<group>"; };
+		D9AA71611A248D850005895A /* OTRSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRSecrets.m; sourceTree = "<group>"; };
 		FDCB62AC1C45EB9F6FFA87B5 /* libPods-XMPPService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMPPService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -203,8 +209,11 @@
 		D93BAA1A1A1DA73B0087F30E /* ChatSecure */ = {
 			isa = PBXGroup;
 			children = (
+				D9AA71601A248D850005895A /* OTRSecrets.h */,
+				D9AA71611A248D850005895A /* OTRSecrets.m */,
 				D93BAA501A1DAD3F0087F30E /* ChatSecure.entitlements */,
 				D93BAA1D1A1DA73B0087F30E /* OTRAppDelegate.h */,
+				D9AA715F1A2480470005895A /* XPC Managers */,
 				D93BAA1E1A1DA73B0087F30E /* OTRAppDelegate.m */,
 				D93BAA221A1DA73B0087F30E /* Images.xcassets */,
 				D93BAA241A1DA73B0087F30E /* MainMenu.xib */,
@@ -300,6 +309,15 @@
 				D93BAA991A1DB4C60087F30E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9AA715F1A2480470005895A /* XPC Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D9AA715C1A2480420005895A /* XMPPServiceManager.h */,
+				D9AA715D1A2480420005895A /* XMPPServiceManager.m */,
+			);
+			name = "XPC Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +596,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93BAA211A1DA73B0087F30E /* main.m in Sources */,
+				D9AA71621A248D850005895A /* OTRSecrets.m in Sources */,
+				D9AA715E1A2480420005895A /* XMPPServiceManager.m in Sources */,
 				D93BAA1F1A1DA73B0087F30E /* OTRAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

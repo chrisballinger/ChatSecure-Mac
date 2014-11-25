@@ -12,6 +12,7 @@ before_install:
     - git submodule update --init --recursive
 
 install:
+  - mv ./ChatSecure/OTRSecrets-Template.m ./ChatSecure/OTRSecrets.m 
   - export ARCHS="x86_64"   # Only build CPAProxy dependencies for i386 to speed things up
   - bash ./Submodules/CPAProxy/scripts/build-all.sh
   - bash ./Submodules/OTRKit/scripts/build-all.sh

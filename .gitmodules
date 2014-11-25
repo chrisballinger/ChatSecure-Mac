@@ -4,3 +4,6 @@
 [submodule "Submodules/CPAProxy"]
 	path = Submodules/CPAProxy
 	url = https://github.com/ursachec/CPAProxy
+[submodule "Submodules/ChatSecure-Core"]
+	path = Submodules/ChatSecure-Core
+	url = git@github.com:chrisballinger/ChatSecure-Core.git

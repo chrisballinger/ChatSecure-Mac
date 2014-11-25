@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "XMPPService.h"
 
+
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+
+
 @interface ServiceDelegate : NSObject <NSXPCListenerDelegate>
 @end
 
@@ -37,7 +42,10 @@
 int main(int argc, const char *argv[])
 {
     // Create the delegate for the service.
-    ServiceDelegate *delegate = [ServiceDelegate new];
+    ServiceDelegate *delegate = [[ServiceDelegate alloc] init];
+    
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+
     
     // Set up the one NSXPCListener for this service. It will handle all incoming connections.
     NSXPCListener *listener = [NSXPCListener serviceListener];
