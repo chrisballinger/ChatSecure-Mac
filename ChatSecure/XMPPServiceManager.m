@@ -8,6 +8,7 @@
 
 #import "XMPPServiceManager.h"
 #import "XMPPServiceProtocol.h"
+#import "XMPPMessage.h"
 
 @interface XMPPServiceManager()
 @property (nonatomic, strong, readonly) NSMutableDictionary *serviceConnections;
@@ -77,6 +78,15 @@
                 case XMPPConnectionStatusAuthenticating:
                     NSLog(@"Authenticating %@...", myJID);
                     break;
+            }
+        }];
+        [xmppService setIncomingMessageBlock:^(XMPPMessage *message) {
+            if ([message isMessageWithBody]) {
+                NSLog(@"Incoming message: %@", [message body]);
+            }
+            if ([message isErrorMessage]) {
+                NSError *error = [message errorMessage];
+                NSLog(@"Incoming message error: %@", error);
             }
         }];
         [xmppService connectWithJID:myJID password:password completionBlock:^(BOOL success, NSError *error) {

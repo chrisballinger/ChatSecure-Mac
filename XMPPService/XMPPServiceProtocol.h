@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class XMPPMessage;
+
 typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
     XMPPConnectionStatusDisconnected,
     XMPPConnectionStatusConnecting,
@@ -16,6 +18,9 @@ typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
 };
 
 @protocol XMPPServiceProtocol
+
+#pragma mark Connection
+/** @name Connection */
 
 /**
  *  Connects to XMPP server.
@@ -51,6 +56,15 @@ typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
  */
 - (void)setConnectionStatusBlock:(void (^)(XMPPConnectionStatus status, NSError *error))statusBlock;
 
+#pragma mark Data
+/** @name Data */
+
+/**
+ *  New message has arrived.
+ *
+ *  @param incomingMessageBlock called when new messages arrive from the server
+ */
+- (void)setIncomingMessageBlock:(void (^)(XMPPMessage *message))incomingMessageBlock;
 
 @end
 

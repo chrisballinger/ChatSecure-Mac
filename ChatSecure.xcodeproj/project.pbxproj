@@ -25,6 +25,7 @@
 		D93BAAA21A1DB4C60087F30E /* OTRService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA961A1DB4C60087F30E /* OTRService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D9AA715E1A2480420005895A /* XMPPServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA715D1A2480420005895A /* XMPPServiceManager.m */; };
 		D9AA71621A248D850005895A /* OTRSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA71611A248D850005895A /* OTRSecrets.m */; };
+		D9B114171A2EE73F00AA314A /* OTRDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B114161A2EE73F00AA314A /* OTRDatabaseManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,8 @@
 		D9AA715D1A2480420005895A /* XMPPServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPServiceManager.m; sourceTree = "<group>"; };
 		D9AA71601A248D850005895A /* OTRSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRSecrets.h; sourceTree = "<group>"; };
 		D9AA71611A248D850005895A /* OTRSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRSecrets.m; sourceTree = "<group>"; };
+		D9B114151A2EE73F00AA314A /* OTRDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRDatabaseManager.h; sourceTree = "<group>"; };
+		D9B114161A2EE73F00AA314A /* OTRDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRDatabaseManager.m; sourceTree = "<group>"; };
 		FDCB62AC1C45EB9F6FFA87B5 /* libPods-XMPPService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMPPService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +212,8 @@
 		D93BAA1A1A1DA73B0087F30E /* ChatSecure */ = {
 			isa = PBXGroup;
 			children = (
+				D9B114151A2EE73F00AA314A /* OTRDatabaseManager.h */,
+				D9B114161A2EE73F00AA314A /* OTRDatabaseManager.m */,
 				D9AA71601A248D850005895A /* OTRSecrets.h */,
 				D9AA71611A248D850005895A /* OTRSecrets.m */,
 				D93BAA501A1DAD3F0087F30E /* ChatSecure.entitlements */,
@@ -596,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93BAA211A1DA73B0087F30E /* main.m in Sources */,
+				D9B114171A2EE73F00AA314A /* OTRDatabaseManager.m in Sources */,
 				D9AA71621A248D850005895A /* OTRSecrets.m in Sources */,
 				D9AA715E1A2480420005895A /* XMPPServiceManager.m in Sources */,
 				D93BAA1F1A1DA73B0087F30E /* OTRAppDelegate.m in Sources */,

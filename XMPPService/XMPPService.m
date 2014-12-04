@@ -41,6 +41,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @property (nonatomic, strong) NSString *password;
 
 @property (nonatomic, copy, readonly) void (^connectionStatusBlock)(XMPPConnectionStatus status, NSError *error);
+@property (nonatomic, copy, readonly) void (^incomingMessageBlock)(XMPPMessage *message);
 
 @end
 
@@ -54,6 +55,52 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 #pragma mark XMPPServiceProtocol methods
+
+/**
+ *  Connects to XMPP server.
+ *
+ *  @param myJID    Jabber ID e.g. user@example.com
+ *  @param password plaintext password
+ *  @param completionBlock does not reflect full connection state, see setConnectionStatusBlock:
+ */
+- (void)connectWithJID:(NSString*)myJID
+              password:(NSString*)password
+       completionBlock:(void (^)(BOOL success, NSError *error))completionBlock {
+    NSAssert(myJID.length > 0, @"myJID must have length");
+    NSAssert(password.length > 0, @"password must have length");
+    if (!myJID.length || !password.length) {
+        completionBlock(NO, [NSError errorWithDomain:@"XMPPService" code:100 userInfo:@{NSLocalizedDescriptionKey: @"JID and password must have lengths"}]);
+        return;
+    }
+    if (![self.xmppStream isDisconnected]) {
+        completionBlock(YES, nil);
+        return;
+    }
+    
+    [self.xmppStream setMyJID:[XMPPJID jidWithString:myJID]];
+    self.password = password;
+    
+    NSError *error = nil;
+    if (![self.xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])
+    {
+        DDLogError(@"Error connecting: %@", error);
+        completionBlock(NO, error);
+        return;
+    }
+    completionBlock(YES, nil);
+    if (self.connectionStatusBlock) {
+        self.connectionStatusBlock(XMPPConnectionStatusConnecting, nil);
+    }
+}
+
+/**
+ *  Disconnects from XMPP server.
+ */
+- (void)disconnect
+{
+    [self goOffline];
+    [self.xmppStream disconnect];
+}
 
 /**
  *  Creates and connects to a new account on XMPP server.
@@ -74,8 +121,26 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
  *  @param statusBlock block called when XMPPServiceStatus changes
  */
 - (void)setConnectionStatusBlock:(void (^)(XMPPConnectionStatus status, NSError *error))statusBlock {
-    _connectionStatusBlock = statusBlock;
+    if (statusBlock) {
+        _connectionStatusBlock = [statusBlock copy];
+    } else {
+        _connectionStatusBlock = nil;
+    }
 }
+
+/**
+ *  New message has arrived.
+ *
+ *  @param incomingMessageBlock called when new messages arrive from the server
+ */
+- (void)setIncomingMessageBlock:(void (^)(XMPPMessage *message))incomingMessageBlock {
+    if (incomingMessageBlock) {
+        _incomingMessageBlock = [incomingMessageBlock copy];
+    } else {
+        _incomingMessageBlock = nil;
+    }
+}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -231,56 +296,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark Connect/disconnect
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/**
- *  Connects to XMPP server.
- *
- *  @param myJID    Jabber ID e.g. user@example.com
- *  @param password plaintext password
- *  @param completionBlock does not reflect full connection state, see setConnectionStatusBlock:
- */
-- (void)connectWithJID:(NSString*)myJID
-              password:(NSString*)password
-       completionBlock:(void (^)(BOOL success, NSError *error))completionBlock {
-    NSAssert(myJID.length > 0, @"myJID must have length");
-    NSAssert(password.length > 0, @"password must have length");
-    if (!myJID.length || !password.length) {
-        completionBlock(NO, [NSError errorWithDomain:@"XMPPService" code:100 userInfo:@{NSLocalizedDescriptionKey: @"JID and password must have lengths"}]);
-        return;
-    }
-    if (![self.xmppStream isDisconnected]) {
-        completionBlock(YES, nil);
-        return;
-    }
-    
-    [self.xmppStream setMyJID:[XMPPJID jidWithString:myJID]];
-    self.password = password;
-    
-    NSError *error = nil;
-    if (![self.xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])
-    {
-        DDLogError(@"Error connecting: %@", error);
-        completionBlock(NO, error);
-        return;
-    }
-    completionBlock(YES, nil);
-    if (self.connectionStatusBlock) {
-        self.connectionStatusBlock(XMPPConnectionStatusConnecting, nil);
-    }
-}
-
-/**
- *  Disconnects from XMPP server.
- */
-- (void)disconnect
-{
-    [self goOffline];
-    [self.xmppStream disconnect];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark XMPPStream Delegate
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -348,12 +363,8 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 {
     DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
     
-    // A simple example of inbound message handling.
-    
-    if ([message isChatMessageWithBody])
-    {
-        NSString *body = [[message elementForName:@"body"] stringValue];
-        DDLogVerbose(@"Incoming message: %@", body);
+    if (self.incomingMessageBlock) {
+        self.incomingMessageBlock(message);
     }
 }
 

@@ -24,6 +24,7 @@ Download the source code and **don't forget** to pull down all of the submodules
     $ git clone https://github.com/chrisballinger/ChatSecure-Mac.git
     $ cd ChatSecure-Mac/
     $ git submodule update --init --recursive
+    $ cp ./Podspecs/XMPPFramework.podspec.json ./Submodules/XMPPFramework/XMPPFramework.podspec.json
     
 Now you'll need to build the dependencies.
     
