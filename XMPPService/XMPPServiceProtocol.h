@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
 
 typedef void (^XMPPIncomingMessageBlock)(XMPPJID *streamJID, XMPPMessage *message, NSUInteger remainingReplyBlocks);
 typedef void (^XMPPConnectionStatusBlock)(XMPPJID *streamJID, XMPPConnectionStatus status, NSError *error, NSUInteger remainingReplyBlocks);
-
+typedef void (^XMPPReplyQueueCountBlock)(NSUInteger remainingReplyBlocks);
 
 @protocol XMPPServiceProtocol
 
@@ -63,6 +63,11 @@ typedef void (^XMPPConnectionStatusBlock)(XMPPJID *streamJID, XMPPConnectionStat
  */
 - (void)enqueueConnectionStatusBlock:(XMPPConnectionStatusBlock)connectionStatusBlock;
 
+/**
+ *  Returns the number of enqueued connection status blocks.
+ */
+- (void)checkConnectionStatusBlockCount:(XMPPReplyQueueCountBlock)replyQueueCountBlock;
+
 #pragma mark Data
 
 /** @name Data */
@@ -75,6 +80,11 @@ typedef void (^XMPPConnectionStatusBlock)(XMPPJID *streamJID, XMPPConnectionStat
  *  @param incomingMessageBlock called when new messages arrive from the server
  */
 - (void)enqueueIncomingMessageBlock:(XMPPIncomingMessageBlock)incomingMessageBlock;
+
+/**
+ *  Returns the number of enqueued incoming message blocks.
+ */
+- (void)checkIncomingMessageBlockCount:(XMPPReplyQueueCountBlock)replyQueueCountBlock;
 
 
 @end

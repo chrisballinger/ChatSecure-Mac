@@ -41,8 +41,8 @@
             NSError *error = [message errorMessage];
             NSLog(@"Incoming message error: %@", error);
         }
-        if (remainingReplyBlocks < 5) {
-            [strongSelf enqueueMessageBlocksWithCount:10];
+        if (remainingReplyBlocks < 50) {
+            [strongSelf enqueueMessageBlocksWithCount:100];
         }
     };
     _connectionStatusBlock = ^(XMPPJID *streamJID, XMPPConnectionStatus status, NSError *error, NSUInteger remainingReplyBlocks) {
@@ -62,8 +62,8 @@
                 NSLog(@"Authenticating %@...", streamJID);
                 break;
         }
-        if (remainingReplyBlocks < 5) {
-            [strongSelf enqueueConnectionStatusBlocksWithCount:10];
+        if (remainingReplyBlocks < 50) {
+            [strongSelf enqueueConnectionStatusBlocksWithCount:100];
         }
     };
 }
@@ -87,8 +87,8 @@
         }];
     });
     
-    [self enqueueMessageBlocksWithCount:10];
-    [self enqueueConnectionStatusBlocksWithCount:10];
+    [self enqueueMessageBlocksWithCount:100];
+    [self enqueueConnectionStatusBlocksWithCount:100];
     
     [self.xmppService connectWithJID:myJID password:password completionBlock:^(BOOL success, NSError *error) {
         if (error) {

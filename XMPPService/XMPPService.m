@@ -21,7 +21,7 @@
 
 // Log levels: off, error, warn, info, verbose
 #if DEBUG
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_OFF;
 #else
 static const int ddLogLevel = LOG_LEVEL_INFO;
 #endif
@@ -42,6 +42,8 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @property (nonatomic, strong, readonly) NSMutableArray *connectionStatusBlocks;
 @property (nonatomic, strong, readonly) NSMutableArray *incomingMessageBlocks;
+@property (nonatomic, strong, readonly) dispatch_queue_t connectionStatusQueue;
+@property (nonatomic, strong, readonly) dispatch_queue_t incomingMessageQueue;
 
 @end
 
@@ -52,12 +54,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         [self setupStream];
         _incomingMessageBlocks = [NSMutableArray array];
         _connectionStatusBlocks = [NSMutableArray array];
+        _connectionStatusQueue = dispatch_queue_create("Connection Status Queue", 0);
+        _incomingMessageQueue = dispatch_queue_create("Incoming Message Queue", 0);
     }
     return self;
 }
 
 - (void) updateConnectionStatus:(XMPPConnectionStatus)connectionStatus error:(NSError*)error {
-    @synchronized(self) {
+    dispatch_async(_connectionStatusQueue, ^{
         XMPPConnectionStatusBlock connectionStatusBlock = [self.connectionStatusBlocks firstObject];
         if (connectionStatusBlock) {
             [self.connectionStatusBlocks removeObjectAtIndex:0];
@@ -65,7 +69,19 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         } else {
             DDLogWarn(@"connectionStatusBlock not set");
         }
-    }
+    });
+}
+
+- (void) receivedMessage:(XMPPMessage*)message {
+    dispatch_async(_incomingMessageQueue, ^{
+        XMPPIncomingMessageBlock incomingMessageBlock = [self.incomingMessageBlocks firstObject];
+        if (incomingMessageBlock) {
+            incomingMessageBlock(self.xmppStream.myJID, message, self.incomingMessageBlocks.count - 1);
+            [self.incomingMessageBlocks removeObjectAtIndex:0];
+        } else {
+            DDLogWarn(@"incomingMessageBlock not set");
+        }
+    });
 }
 
 #pragma mark XMPPServiceProtocol methods
@@ -134,12 +150,24 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
  */
 - (void)enqueueConnectionStatusBlock:(XMPPConnectionStatusBlock)connectionStatusBlock {
     if (connectionStatusBlock) {
-        @synchronized(self) {
+        dispatch_async(_connectionStatusQueue, ^{
             [self.connectionStatusBlocks addObject:[connectionStatusBlock copy]];
-        }
+        });
     } else {
         DDLogWarn(@"connectionStatusBlock cannot be enqueud because it is nil");
     }
+}
+
+/**
+ *  Returns the number of enqueued connection status blocks.
+ */
+- (void)checkConnectionStatusBlockCount:(XMPPReplyQueueCountBlock)replyQueueCountBlock {
+    if (!replyQueueCountBlock) {
+        return;
+    }
+    dispatch_async(self.connectionStatusQueue, ^{
+        replyQueueCountBlock(self.connectionStatusBlocks.count);
+    });
 }
 
 /**
@@ -149,12 +177,24 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
  */
 - (void)enqueueIncomingMessageBlock:(XMPPIncomingMessageBlock)incomingMessageBlock {
     if (incomingMessageBlock) {
-        @synchronized(self) {
+        dispatch_async(_incomingMessageQueue, ^{
             [self.incomingMessageBlocks addObject:[incomingMessageBlock copy]];
-        }
+        });
     } else {
         DDLogWarn(@"incomingMessageBlock cannot be enqueud because it is nil");
     }
+}
+
+/**
+ *  Returns the number of enqueued incoming message blocks.
+ */
+- (void)checkIncomingMessageBlockCount:(XMPPReplyQueueCountBlock)replyQueueCountBlock {
+    if (!replyQueueCountBlock) {
+        return;
+    }
+    dispatch_async(self.incomingMessageQueue, ^{
+        replyQueueCountBlock(self.incomingMessageBlocks.count);
+    });
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -373,15 +413,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 {
     DDLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, message);
     
-    @synchronized(self) {
-        XMPPIncomingMessageBlock incomingMessageBlock = [self.incomingMessageBlocks firstObject];
-        if (incomingMessageBlock) {
-            incomingMessageBlock(self.xmppStream.myJID, message, self.incomingMessageBlocks.count - 1);
-            [self.incomingMessageBlocks removeObjectAtIndex:0];
-        } else {
-            DDLogWarn(@"incomingMessageBlock not set");
-        }
-    }
+    [self receivedMessage:message];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence
