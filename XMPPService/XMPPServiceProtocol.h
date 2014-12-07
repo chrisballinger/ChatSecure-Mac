@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class XMPPMessage;
+@class XMPPJID;
 
 typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
     XMPPConnectionStatusDisconnected,
@@ -16,6 +17,10 @@ typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
     XMPPConnectionStatusAuthenticating,
     XMPPConnectionStatusConnected,
 };
+
+typedef void (^XMPPIncomingMessageBlock)(XMPPJID *streamJID, XMPPMessage *message, NSUInteger remainingReplyBlocks);
+typedef void (^XMPPConnectionStatusBlock)(XMPPJID *streamJID, XMPPConnectionStatus status, NSError *error, NSUInteger remainingReplyBlocks);
+
 
 @protocol XMPPServiceProtocol
 
@@ -50,21 +55,27 @@ typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
 - (void)disconnect;
 
 /**
- *  Register a statusBlock to observe connection status updates.
+ *  Register a statusBlock to observe connection status updates. Because you cannot reuse a block
+ *  for multiple replies due to XPC limitations, we must keep an internal queue of ongoing
+ *  message blocks. You should enqueue more incomingMessageBlocks when remainingReplyBlocks becomes low.
  *
  *  @param statusBlock block called when XMPPServiceStatus changes
  */
-- (void)setConnectionStatusBlock:(void (^)(XMPPConnectionStatus status, NSError *error))statusBlock;
+- (void)enqueueConnectionStatusBlock:(XMPPConnectionStatusBlock)connectionStatusBlock;
 
 #pragma mark Data
+
 /** @name Data */
 
 /**
- *  New message has arrived.
+ *  Enqueue a new incoming message block. Because you cannot reuse a block for multiple replies
+ *  due to XPC limitations, we must keep an internal queue of ongoing message blocks. You should
+ *  enqueue more incomingMessageBlocks when remainingReplyBlocks becomes low.
  *
  *  @param incomingMessageBlock called when new messages arrive from the server
  */
-- (void)setIncomingMessageBlock:(void (^)(XMPPMessage *message))incomingMessageBlock;
+- (void)enqueueIncomingMessageBlock:(XMPPIncomingMessageBlock)incomingMessageBlock;
+
 
 @end
 
