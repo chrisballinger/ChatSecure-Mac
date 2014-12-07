@@ -9,7 +9,7 @@ git:
 before_install:
     - sed -i -e 's/git@github.com:/git:\/\/github.com\//' .gitmodules
     - sed -i -e 's/git@github.com:/git:\/\/github.com\//' Podfile
-    - git submodule update --init --recursive
+    - git submodule update --init
 
 install:
   - mv ./ChatSecure/OTRSecrets-Template.m ./ChatSecure/OTRSecrets.m
