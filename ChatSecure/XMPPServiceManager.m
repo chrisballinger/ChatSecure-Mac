@@ -8,7 +8,7 @@
 
 #import "XMPPServiceManager.h"
 #import "XMPPServiceProtocol.h"
-#import "XMPPMessage.h"
+@import XMPPFramework;
 
 @interface XMPPServiceManager()
 @property (nonatomic, strong, readonly) NSXPCConnection *xmppServiceConnection;

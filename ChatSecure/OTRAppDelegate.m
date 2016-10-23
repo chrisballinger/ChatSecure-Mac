@@ -10,8 +10,7 @@
 #import "XMPPServiceManager.h"
 #import "OTRSecrets.h"
 
-#import "DDLog.h"
-#import "DDTTYLogger.h"
+@import CocoaLumberjack;
 
 
 @interface OTRAppDelegate ()

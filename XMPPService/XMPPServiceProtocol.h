@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class XMPPMessage;
-@class XMPPJID;
+@import XMPPFramework;
+//@class XMPPMessage;
+//@class XMPPJID;
 
 typedef NS_ENUM(NSUInteger, XMPPConnectionStatus) {
     XMPPConnectionStatusDisconnected,

@@ -22,7 +22,7 @@
 
 @import Foundation;
 
-#import "XMPPRoster.h"
+@import XMPPFramework;
 #import "XMPPServiceProtocol.h"
 
 @interface XMPPService : NSObject <XMPPRosterDelegate, XMPPServiceProtocol>

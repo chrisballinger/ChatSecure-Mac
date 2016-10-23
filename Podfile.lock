@@ -1,30 +1,44 @@
 PODS:
-  - CocoaAsyncSocket (7.4.1)
-  - CocoaLumberjack (1.9.2):
-    - CocoaLumberjack/Extensions (= 1.9.2)
-  - CocoaLumberjack/Core (1.9.2)
-  - CocoaLumberjack/Extensions (1.9.2):
+  - CocoaAsyncSocket (7.5.1):
+    - CocoaAsyncSocket/GCD (= 7.5.1)
+  - CocoaAsyncSocket/GCD (7.5.1)
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
     - CocoaLumberjack/Core
-  - Mantle (1.5.1):
-    - Mantle/extobjc (= 1.5.1)
-  - Mantle/extobjc (1.5.1)
-  - PureLayout (2.0.3)
-  - SQLCipher/common (3.1.0)
-  - SQLCipher/fts (3.1.0):
+  - CocoaLumberjack/Extensions (2.4.0):
+    - CocoaLumberjack/Default
+  - KissXML (5.1.2):
+    - KissXML/Core (= 5.1.2)
+  - KissXML/Core (5.1.2)
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
+  - ProxyKit/Client (1.1.0):
+    - ProxyKit/common
+  - ProxyKit/common (1.1.0):
+    - CocoaAsyncSocket (~> 7.4)
+    - CocoaLumberjack (~> 2.2)
+  - PureLayout (3.0.2)
+  - Reachability (3.2)
+  - SQLCipher/common (3.4.0)
+  - SQLCipher/fts (3.4.0):
     - SQLCipher/common
-  - XMPPFramework (3.6.4):
-    - XMPPFramework/All (= 3.6.4)
-  - XMPPFramework/All (3.6.4):
-    - XMPPFramework/Authentication
+  - XMPPFramework (3.7.0):
+    - XMPPFramework/All (= 3.7.0)
+  - XMPPFramework/All (3.7.0):
     - XMPPFramework/BandwidthMonitor
-    - XMPPFramework/Categories
+    - XMPPFramework/Core
     - XMPPFramework/CoreDataStorage
+    - XMPPFramework/FileTransfer
     - XMPPFramework/GoogleSharedStatus
+    - XMPPFramework/OMEMO
     - XMPPFramework/ProcessOne
     - XMPPFramework/Reconnect
     - XMPPFramework/Roster
     - XMPPFramework/SystemInputActivityMonitor
-    - XMPPFramework/Utilities
     - XMPPFramework/XEP-0009
     - XMPPFramework/XEP-0012
     - XMPPFramework/XEP-0016
@@ -34,6 +48,7 @@ PODS:
     - XMPPFramework/XEP-0060
     - XMPPFramework/XEP-0065
     - XMPPFramework/XEP-0066
+    - XMPPFramework/XEP-0077
     - XMPPFramework/XEP-0082
     - XMPPFramework/XEP-0085
     - XMPPFramework/XEP-0092
@@ -41,6 +56,7 @@ PODS:
     - XMPPFramework/XEP-0106
     - XMPPFramework/XEP-0115
     - XMPPFramework/XEP-0136
+    - XMPPFramework/XEP-0147
     - XMPPFramework/XEP-0153
     - XMPPFramework/XEP-0172
     - XMPPFramework/XEP-0184
@@ -54,134 +70,212 @@ PODS:
     - XMPPFramework/XEP-0280
     - XMPPFramework/XEP-0297
     - XMPPFramework/XEP-0308
+    - XMPPFramework/XEP-0313
     - XMPPFramework/XEP-0333
+    - XMPPFramework/XEP-0334
     - XMPPFramework/XEP-0335
-  - XMPPFramework/Authentication (3.6.4):
+    - XMPPFramework/XEP-0352
+    - XMPPFramework/XEP-0357
+    - XMPPFramework/XEP-0363
+    - XMPPFramework/XMPPMUCLight
+  - XMPPFramework/BandwidthMonitor (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/BandwidthMonitor (3.6.4):
+  - XMPPFramework/Core (3.7.0):
+    - CocoaAsyncSocket (~> 7.5.0)
+    - CocoaLumberjack (~> 2.0)
+    - KissXML (~> 5.1.2)
+    - ProxyKit/Client (~> 1.1)
+  - XMPPFramework/CoreDataStorage (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/Categories (3.6.4):
+  - XMPPFramework/FileTransfer (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/Core (3.6.4):
-    - CocoaAsyncSocket (~> 7.4)
-    - CocoaLumberjack (~> 1.9)
-    - XMPPFramework/KissXML
-  - XMPPFramework/CoreDataStorage (3.6.4):
+  - XMPPFramework/GoogleSharedStatus (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/GoogleSharedStatus (3.6.4):
+  - XMPPFramework/OMEMO (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/ProcessOne (3.6.4):
+    - XMPPFramework/XEP-0060
+    - XMPPFramework/XEP-0334
+  - XMPPFramework/ProcessOne (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/Reconnect (3.6.4):
+  - XMPPFramework/Reconnect (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/Roster (3.6.4):
+  - XMPPFramework/Roster (3.7.0):
+    - XMPPFramework/Core
+    - XMPPFramework/CoreDataStorage
+  - XMPPFramework/SystemInputActivityMonitor (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0009 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0012 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0016 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0045 (3.7.0):
     - XMPPFramework/Core
     - XMPPFramework/CoreDataStorage
     - XMPPFramework/XEP-0203
-  - XMPPFramework/SystemInputActivityMonitor (3.6.4):
-    - XMPPFramework/Core
-  - XMPPFramework/Utilities (3.6.4):
-    - XMPPFramework/Core
-  - XMPPFramework/XEP-0009 (3.6.4):
-    - XMPPFramework/Core
-  - XMPPFramework/XEP-0012 (3.6.4):
-    - XMPPFramework/Core
-  - XMPPFramework/XEP-0016 (3.6.4):
-    - XMPPFramework/Core
-  - XMPPFramework/XEP-0045 (3.6.4):
-    - XMPPFramework/Core
-    - XMPPFramework/CoreDataStorage
-    - XMPPFramework/XEP-0203
-  - XMPPFramework/XEP-0054 (3.6.4):
+  - XMPPFramework/XEP-0054 (3.7.0):
     - XMPPFramework/Core
     - XMPPFramework/Roster
-  - XMPPFramework/XEP-0059 (3.6.4):
+  - XMPPFramework/XEP-0059 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0060 (3.6.4):
+  - XMPPFramework/XEP-0060 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0065 (3.6.4):
+  - XMPPFramework/XEP-0065 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0066 (3.6.4):
+  - XMPPFramework/XEP-0066 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0082 (3.6.4):
+  - XMPPFramework/XEP-0077 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0085 (3.6.4):
+  - XMPPFramework/XEP-0082 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0092 (3.6.4):
+  - XMPPFramework/XEP-0085 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0100 (3.6.4):
+  - XMPPFramework/XEP-0092 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0106 (3.6.4):
+  - XMPPFramework/XEP-0100 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0115 (3.6.4):
+  - XMPPFramework/XEP-0106 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0115 (3.7.0):
     - XMPPFramework/Core
     - XMPPFramework/CoreDataStorage
-  - XMPPFramework/XEP-0136 (3.6.4):
-    - XMPPFramework/Core
+  - XMPPFramework/XEP-0136 (3.7.0):
     - XMPPFramework/CoreDataStorage
     - XMPPFramework/XEP-0085
     - XMPPFramework/XEP-0203
-  - XMPPFramework/XEP-0153 (3.6.4):
+  - XMPPFramework/XEP-0147 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0153 (3.7.0):
     - XMPPFramework/Core
     - XMPPFramework/XEP-0054
-  - XMPPFramework/XEP-0172 (3.6.4):
+  - XMPPFramework/XEP-0172 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0184 (3.6.4):
+  - XMPPFramework/XEP-0184 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0191 (3.6.4):
+  - XMPPFramework/XEP-0191 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0198 (3.6.4):
+  - XMPPFramework/XEP-0198 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0199 (3.6.4):
+  - XMPPFramework/XEP-0199 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0202 (3.6.4):
-    - XMPPFramework/Core
-    - XMPPFramework/XEP-0082
-  - XMPPFramework/XEP-0203 (3.6.4):
+  - XMPPFramework/XEP-0202 (3.7.0):
     - XMPPFramework/Core
     - XMPPFramework/XEP-0082
-  - XMPPFramework/XEP-0223 (3.6.4):
+  - XMPPFramework/XEP-0203 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0224 (3.6.4):
+    - XMPPFramework/XEP-0082
+  - XMPPFramework/XEP-0223 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0280 (3.6.4):
+  - XMPPFramework/XEP-0224 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0297 (3.6.4):
+  - XMPPFramework/XEP-0280 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0297 (3.7.0):
     - XMPPFramework/Core
     - XMPPFramework/XEP-0203
-  - XMPPFramework/XEP-0308 (3.6.4):
+  - XMPPFramework/XEP-0308 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0333 (3.6.4):
+  - XMPPFramework/XEP-0313 (3.7.0):
     - XMPPFramework/Core
-  - XMPPFramework/XEP-0335 (3.6.4):
+    - XMPPFramework/XEP-0059
+  - XMPPFramework/XEP-0333 (3.7.0):
     - XMPPFramework/Core
-  - YapDatabase/common (2.5.3):
-    - CocoaLumberjack (~> 1)
-  - YapDatabase/SQLCipher (2.5.3):
+  - XMPPFramework/XEP-0334 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0335 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0352 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0357 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XEP-0363 (3.7.0):
+    - XMPPFramework/Core
+  - XMPPFramework/XMPPMUCLight (3.7.0):
+    - XMPPFramework/Core
+    - XMPPFramework/CoreDataStorage
+    - XMPPFramework/XEP-0203
+  - YapDatabase/SQLCipher (2.9.2):
+    - YapDatabase/SQLCipher/Core (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions (= 2.9.2)
+  - YapDatabase/SQLCipher/Core (2.9.2):
+    - CocoaLumberjack (~> 2)
     - SQLCipher/fts
-    - YapDatabase/common
+  - YapDatabase/SQLCipher/Extensions (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/ActionManager (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/CloudKit (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/ConnectionProxy (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/FilteredViews (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/FullTextSearch (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Hooks (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Relationships (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/RTreeIndex (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/SearchResults (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/SecondaryIndex (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Views (= 2.9.2)
+  - YapDatabase/SQLCipher/Extensions/ActionManager (2.9.2):
+    - Reachability (~> 3)
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/CloudKit (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/ConnectionProxy (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/FilteredViews (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/FullTextSearch (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Hooks (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Relationships (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/RTreeIndex (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/SearchResults (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/FullTextSearch
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/SecondaryIndex (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Views (2.9.2):
+    - YapDatabase/SQLCipher/Core
 
 DEPENDENCIES:
-  - CocoaAsyncSocket (from `https://github.com/robbiehanson/CocoaAsyncSocket.git`, commit `c0bbcbcc5e039ca5d732f9844bf95c3d8ee31a5b`)
-  - Mantle (~> 1.5)
-  - PureLayout (~> 2.0)
-  - XMPPFramework (from `Submodules/XMPPFramework/XMPPFramework.podspec.json`)
-  - YapDatabase/SQLCipher (~> 2.5)
+  - CocoaAsyncSocket (from `https://github.com/robbiehanson/CocoaAsyncSocket.git`, commit `f3cf8a6fb27de57bd70b40cf4173d695d4a17b22`)
+  - Mantle (~> 2.1)
+  - PureLayout (~> 3.0)
+  - XMPPFramework (from `Submodules/XMPPFramework/XMPPFramework.podspec`)
+  - YapDatabase/SQLCipher (~> 2.9)
 
 EXTERNAL SOURCES:
   CocoaAsyncSocket:
-    :commit: c0bbcbcc5e039ca5d732f9844bf95c3d8ee31a5b
+    :commit: f3cf8a6fb27de57bd70b40cf4173d695d4a17b22
     :git: https://github.com/robbiehanson/CocoaAsyncSocket.git
   XMPPFramework:
-    :path: Submodules/XMPPFramework/XMPPFramework.podspec.json
+    :path: Submodules/XMPPFramework/XMPPFramework.podspec
+
+CHECKOUT OPTIONS:
+  CocoaAsyncSocket:
+    :commit: f3cf8a6fb27de57bd70b40cf4173d695d4a17b22
+    :git: https://github.com/robbiehanson/CocoaAsyncSocket.git
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: 4bbe8fc969e61e62f408de98faac676468e155b3
-  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
-  Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
-  PureLayout: 9658675ed95dabfcdf5154c0771ec9ed0980b370
-  SQLCipher: 981110217eb93c2779c34fb59e646a1c1da918d8
-  XMPPFramework: 87bac7edb0ffe6d04b13e764a77df64767f1b369
-  YapDatabase: 096e860167b04e629b88bea33dfb7a4153279bb0
+  CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  KissXML: 246c842586bb77110e04fb88e19376d96245c856
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  ProxyKit: 1f35adc913debc7ca6748c02487361dabaaea532
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SQLCipher: 4c768761421736a247ed6cf412d9045615d53dff
+  XMPPFramework: 96396d09d681b470db3ebc464be4b5bd725d5644
+  YapDatabase: b1e43555a34a5298e23a045be96817a5ef0da58f
 
-COCOAPODS: 0.35.0
+PODFILE CHECKSUM: 3b2285037bbcfc085fea6aabe2bd1c657cab3e42
+
+COCOAPODS: 1.1.1

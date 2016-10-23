@@ -7,23 +7,14 @@
 //
 
 #import "XMPPService.h"
-#import "GCDAsyncSocket.h"
-#import "XMPP.h"
-#import "XMPPLogging.h"
-#import "XMPPReconnect.h"
-#import "XMPPCapabilitiesCoreDataStorage.h"
-#import "XMPPRosterCoreDataStorage.h"
-#import "XMPPvCardAvatarModule.h"
-#import "XMPPvCardCoreDataStorage.h"
-
-#import "DDLog.h"
-#import "DDTTYLogger.h"
+@import CocoaAsyncSocket;
+@import XMPPFramework;
 
 // Log levels: off, error, warn, info, verbose
 #if DEBUG
-static const int ddLogLevel = LOG_LEVEL_OFF;
+static const int xmppLogLevel = XMPP_LOG_LEVEL_OFF;
 #else
-static const int ddLogLevel = LOG_LEVEL_INFO;
+static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 #endif
 
 
@@ -67,7 +58,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
             [self.connectionStatusBlocks removeObjectAtIndex:0];
             connectionStatusBlock(self.xmppStream.myJID, connectionStatus, error, self.incomingMessageBlocks.count - 1);
         } else {
-            DDLogWarn(@"connectionStatusBlock not set");
+            XMPPLogWarn(@"connectionStatusBlock not set");
         }
     });
 }
@@ -79,7 +70,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
             incomingMessageBlock(self.xmppStream.myJID, message, self.incomingMessageBlocks.count - 1);
             [self.incomingMessageBlocks removeObjectAtIndex:0];
         } else {
-            DDLogWarn(@"incomingMessageBlock not set");
+            XMPPLogWarn(@"incomingMessageBlock not set");
         }
     });
 }
@@ -113,7 +104,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     NSError *error = nil;
     if (![self.xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])
     {
-        DDLogError(@"Error connecting: %@", error);
+        XMPPLogWarn(@"Error connecting: %@", error);
         completionBlock(NO, error);
         return;
     }
@@ -154,7 +145,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
             [self.connectionStatusBlocks addObject:[connectionStatusBlock copy]];
         });
     } else {
-        DDLogWarn(@"connectionStatusBlock cannot be enqueud because it is nil");
+        XMPPLogWarn(@"connectionStatusBlock cannot be enqueud because it is nil");
     }
 }
 
@@ -181,7 +172,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
             [self.incomingMessageBlocks addObject:[incomingMessageBlock copy]];
         });
     } else {
-        DDLogWarn(@"incomingMessageBlock cannot be enqueud because it is nil");
+        XMPPLogWarn(@"incomingMessageBlock cannot be enqueud because it is nil");
     }
 }
 
@@ -355,12 +346,12 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (void)xmppStream:(XMPPStream *)sender socketDidConnect:(GCDAsyncSocket *)socket
 {
-    DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
+    XMPPLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
 }
 
 - (void)xmppStream:(XMPPStream *)sender willSecureWithSettings:(NSMutableDictionary *)settings
 {
-    DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
+    XMPPLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
     
     NSString *expectedCertName = [self.xmppStream.myJID domain];
     if (expectedCertName)
@@ -371,24 +362,24 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (void)xmppStreamDidSecure:(XMPPStream *)sender
 {
-    DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
+    XMPPLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
 }
 
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
-    DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
+    XMPPLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
     
     NSError *error = nil;
     if (![[self xmppStream] authenticateWithPassword:self.password error:&error])
     {
-        DDLogError(@"Error authenticating: %@", error);
+        XMPPLogError(@"Error authenticating: %@", error);
     }
     [self updateConnectionStatus:XMPPConnectionStatusAuthenticating error:error];
 }
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-    DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
+    XMPPLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
     
     [self goOnline];
     
@@ -397,41 +388,41 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error
 {
-    DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
+    XMPPLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
     
     [self disconnect];
 }
 
 - (BOOL)xmppStream:(XMPPStream *)sender didReceiveIQ:(XMPPIQ *)iq
 {
-    DDLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, iq);
+    XMPPLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, iq);
     
     return NO;
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
-    DDLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, message);
+    XMPPLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, message);
     
     [self receivedMessage:message];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence
 {
-    DDLogVerbose(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, [presence fromStr]);
+    XMPPLogVerbose(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, [presence fromStr]);
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceiveError:(id)error
 {
-    DDLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, error);
+    XMPPLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, error);
 }
 
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
 {
     if (error) {
-        DDLogError(@"Unable to connect to server: %@", error);
+        XMPPLogError(@"Unable to connect to server: %@", error);
     } else {
-        DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
+        XMPPLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
     }
     
     [self updateConnectionStatus:XMPPConnectionStatusDisconnected error:error];
@@ -443,7 +434,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (void)xmppRoster:(XMPPRoster *)sender didReceiveBuddyRequest:(XMPPPresence *)presence
 {
-    DDLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, [presence fromStr]);
+    XMPPLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, [presence fromStr]);
 }
 
 
