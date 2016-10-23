@@ -13,9 +13,6 @@
 @interface XMPPServiceManager()
 @property (nonatomic, strong, readonly) NSXPCConnection *xmppServiceConnection;
 @property (nonatomic, readonly) dispatch_queue_t connectionQueue;
-@property (nonatomic, strong, readonly) XMPPIncomingMessageBlock incomingMessageBlock;
-@property (nonatomic, strong, readonly) XMPPConnectionStatusBlock connectionStatusBlock;
-
 @property (nonatomic, strong, readonly) id<XMPPServiceProtocol> xmppService;
 @end
 
@@ -23,49 +20,8 @@
 
 - (instancetype) init {
     if (self = [super init]) {
-        [self setupReplyBlocks];
     }
     return self;
-}
-
-- (void) setupReplyBlocks {
-    __weak __typeof__(self) weakSelf = self;
-    _incomingMessageBlock = ^void(XMPPJID *streamJID, XMPPMessage *message, NSUInteger remainingReplyBlocks) {
-        __typeof__(self) strongSelf = weakSelf;
-        NSLog(@"Incoming message: %@", message.XMLString);
-        NSLog(@"remainingReplyBlocks for incoming message: %lu", (unsigned long)remainingReplyBlocks);
-        if ([message isMessageWithBody]) {
-            NSLog(@"Incoming message with body: %@", [message body]);
-        }
-        if ([message isErrorMessage]) {
-            NSError *error = [message errorMessage];
-            NSLog(@"Incoming message error: %@", error);
-        }
-        if (remainingReplyBlocks < 50) {
-            [strongSelf enqueueMessageBlocksWithCount:100];
-        }
-    };
-    _connectionStatusBlock = ^(XMPPJID *streamJID, XMPPConnectionStatus status, NSError *error, NSUInteger remainingReplyBlocks) {
-        __typeof__(self) strongSelf = weakSelf;
-        NSLog(@"remainingReplyBlocks for connection status: %lu", (unsigned long)remainingReplyBlocks);
-        switch (status) {
-            case XMPPConnectionStatusConnected:
-                NSLog(@"Connected to %@!", streamJID);
-                break;
-            case XMPPConnectionStatusConnecting:
-                NSLog(@"Connecting to %@...", streamJID);
-                break;
-            case XMPPConnectionStatusDisconnected:
-                NSLog(@"Disconnected from %@ %@", streamJID, error);
-                break;
-            case XMPPConnectionStatusAuthenticating:
-                NSLog(@"Authenticating %@...", streamJID);
-                break;
-        }
-        if (remainingReplyBlocks < 50) {
-            [strongSelf enqueueConnectionStatusBlocksWithCount:100];
-        }
-    };
 }
 
 /**
@@ -81,14 +37,13 @@
     dispatch_once(&onceToken, ^{
         _xmppServiceConnection = [[NSXPCConnection alloc] initWithServiceName:@"com.chrisballinger.XMPPService"];
         self.xmppServiceConnection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XMPPServiceProtocol)];
+        self.xmppServiceConnection.exportedObject = self;
+        self.xmppServiceConnection.exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XMPPServiceListener)];
         [self.xmppServiceConnection resume];
         _xmppService = [self.xmppServiceConnection remoteObjectProxyWithErrorHandler:^(NSError *error) {
             NSLog(@"Error with XPC for %@: %@", myJID, error);
         }];
     });
-    
-    [self enqueueMessageBlocksWithCount:100];
-    [self enqueueConnectionStatusBlocksWithCount:100];
     
     [self.xmppService connectWithJID:myJID password:password completionBlock:^(BOOL success, NSError *error) {
         if (error) {
@@ -99,15 +54,34 @@
     }];
 }
 
-- (void) enqueueMessageBlocksWithCount:(NSUInteger)count {
-    for (NSUInteger i = 0; i < count; i++) {
-        [self.xmppService enqueueIncomingMessageBlock:self.incomingMessageBlock];
+#pragma mark XMPPServiceListener
+
+- (void) handleIncomingMessage:(XMPPMessage*)message streamTag:(id<NSSecureCoding>)streamTag {
+    NSLog(@"handleIncomingMessage: %@ %@ %@", message, [message from], streamTag);
+    
+    if ([message isMessageWithBody]) {
+        NSLog(@"Incoming message with body: %@", [message body]);
+    }
+    if ([message isErrorMessage]) {
+        NSError *error = [message errorMessage];
+        NSLog(@"Incoming message error: %@", error);
     }
 }
 
-- (void) enqueueConnectionStatusBlocksWithCount:(NSUInteger)count {
-    for (NSUInteger i = 0; i < count; i++) {
-        [self.xmppService enqueueConnectionStatusBlock:self.connectionStatusBlock];
+- (void) handleConnectionStatus:(XMPPConnectionStatus)status streamJID:(XMPPJID*)streamJID error:(nullable NSError *)error streamTag:(NSString*)streamTag {
+    switch (status) {
+        case XMPPConnectionStatusConnected:
+            NSLog(@"Connected to %@!", streamJID);
+            break;
+        case XMPPConnectionStatusConnecting:
+            NSLog(@"Connecting to %@...", streamJID);
+            break;
+        case XMPPConnectionStatusDisconnected:
+            NSLog(@"Disconnected from %@ %@", streamJID, error);
+            break;
+        case XMPPConnectionStatusAuthenticating:
+            NSLog(@"Authenticating %@...", streamJID);
+            break;
     }
 }
 

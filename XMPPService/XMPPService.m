@@ -7,6 +7,7 @@
 //
 
 #import "XMPPService.h"
+#import "XMPPServiceListener.h"
 @import CocoaAsyncSocket;
 @import XMPPFramework;
 
@@ -31,8 +32,6 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 
 @property (nonatomic, strong) NSString *password;
 
-@property (nonatomic, strong, readonly) NSMutableArray *connectionStatusBlocks;
-@property (nonatomic, strong, readonly) NSMutableArray *incomingMessageBlocks;
 @property (nonatomic, strong, readonly) dispatch_queue_t connectionStatusQueue;
 @property (nonatomic, strong, readonly) dispatch_queue_t incomingMessageQueue;
 
@@ -43,35 +42,27 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 - (instancetype) init {
     if (self = [super init]) {
         [self setupStream];
-        _incomingMessageBlocks = [NSMutableArray array];
-        _connectionStatusBlocks = [NSMutableArray array];
+        [NSProcessInfo processInfo].automaticTerminationSupportEnabled = YES;
         _connectionStatusQueue = dispatch_queue_create("Connection Status Queue", 0);
         _incomingMessageQueue = dispatch_queue_create("Incoming Message Queue", 0);
     }
     return self;
 }
 
+/** Wrapper around [parentConnection remoteObjectProxy] */
+- (id<XMPPServiceListener>)xmppListener {
+    return [self.parentConnection remoteObjectProxy];
+}
+
 - (void) updateConnectionStatus:(XMPPConnectionStatus)connectionStatus error:(NSError*)error {
     dispatch_async(_connectionStatusQueue, ^{
-        XMPPConnectionStatusBlock connectionStatusBlock = [self.connectionStatusBlocks firstObject];
-        if (connectionStatusBlock) {
-            [self.connectionStatusBlocks removeObjectAtIndex:0];
-            connectionStatusBlock(self.xmppStream.myJID, connectionStatus, error, self.incomingMessageBlocks.count - 1);
-        } else {
-            XMPPLogWarn(@"connectionStatusBlock not set");
-        }
+        [self.xmppListener handleConnectionStatus:connectionStatus streamJID:self.xmppStream.myJID error:error streamTag:self.xmppStream.tag];
     });
 }
 
 - (void) receivedMessage:(XMPPMessage*)message {
     dispatch_async(_incomingMessageQueue, ^{
-        XMPPIncomingMessageBlock incomingMessageBlock = [self.incomingMessageBlocks firstObject];
-        if (incomingMessageBlock) {
-            incomingMessageBlock(self.xmppStream.myJID, message, self.incomingMessageBlocks.count - 1);
-            [self.incomingMessageBlocks removeObjectAtIndex:0];
-        } else {
-            XMPPLogWarn(@"incomingMessageBlock not set");
-        }
+        [self.xmppListener handleIncomingMessage:message streamTag:self.xmppStream.tag];
     });
 }
 
@@ -87,6 +78,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 - (void)connectWithJID:(NSString*)myJID
               password:(NSString*)password
        completionBlock:(void (^)(BOOL success, NSError *error))completionBlock {
+    
     NSAssert(myJID.length > 0, @"myJID must have length");
     NSAssert(password.length > 0, @"password must have length");
     if (!myJID.length || !password.length) {
@@ -108,6 +100,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
         completionBlock(NO, error);
         return;
     }
+    [[NSProcessInfo processInfo] disableAutomaticTermination:@"xmpp service"];
     completionBlock(YES, nil);
     [self updateConnectionStatus:XMPPConnectionStatusConnecting error:nil];
 }
@@ -117,6 +110,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
  */
 - (void)disconnect
 {
+    [[NSProcessInfo processInfo] enableAutomaticTermination:@"xmpp service"];
     [self goOffline];
     [self.xmppStream disconnect];
 }
@@ -131,62 +125,9 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 - (void)connectWithNewJID:(NSString*)newJID
                  password:(NSString*)password
           completionBlock:(void (^)(BOOL success, NSError *error))completionBlock {
-    
+    NSAssert(NO, @"Not implemented");
 }
 
-/**
- *  Register a statusBlock to observe connection status updates.
- *
- *  @param statusBlock block called when XMPPServiceStatus changes
- */
-- (void)enqueueConnectionStatusBlock:(XMPPConnectionStatusBlock)connectionStatusBlock {
-    if (connectionStatusBlock) {
-        dispatch_async(_connectionStatusQueue, ^{
-            [self.connectionStatusBlocks addObject:[connectionStatusBlock copy]];
-        });
-    } else {
-        XMPPLogWarn(@"connectionStatusBlock cannot be enqueud because it is nil");
-    }
-}
-
-/**
- *  Returns the number of enqueued connection status blocks.
- */
-- (void)checkConnectionStatusBlockCount:(XMPPReplyQueueCountBlock)replyQueueCountBlock {
-    if (!replyQueueCountBlock) {
-        return;
-    }
-    dispatch_async(self.connectionStatusQueue, ^{
-        replyQueueCountBlock(self.connectionStatusBlocks.count);
-    });
-}
-
-/**
- *  New message has arrived.
- *
- *  @param incomingMessageBlock called when new messages arrive from the server
- */
-- (void)enqueueIncomingMessageBlock:(XMPPIncomingMessageBlock)incomingMessageBlock {
-    if (incomingMessageBlock) {
-        dispatch_async(_incomingMessageQueue, ^{
-            [self.incomingMessageBlocks addObject:[incomingMessageBlock copy]];
-        });
-    } else {
-        XMPPLogWarn(@"incomingMessageBlock cannot be enqueud because it is nil");
-    }
-}
-
-/**
- *  Returns the number of enqueued incoming message blocks.
- */
-- (void)checkIncomingMessageBlockCount:(XMPPReplyQueueCountBlock)replyQueueCountBlock {
-    if (!replyQueueCountBlock) {
-        return;
-    }
-    dispatch_async(self.incomingMessageQueue, ^{
-        replyQueueCountBlock(self.incomingMessageBlocks.count);
-    });
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Private
@@ -202,6 +143,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
     // Everything else plugs into the xmppStream, such as modules/extensions and delegates.
     
     _xmppStream = [[XMPPStream alloc] init];
+    _xmppStream.tag = [[NSUUID UUID] UUIDString];
     
     // Setup reconnect
     //

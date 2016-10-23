@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XMPPServiceListener.h"
 
-@interface XMPPServiceManager : NSObject
+@interface XMPPServiceManager : NSObject <XMPPServiceListener>
 
 /**
  *  Creates new XMPPService and uses it to connect to XMPP server.

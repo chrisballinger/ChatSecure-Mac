@@ -24,8 +24,10 @@
 
 @import XMPPFramework;
 #import "XMPPServiceProtocol.h"
+#import "XMPPServiceListener.h"
 
 @interface XMPPService : NSObject <XMPPRosterDelegate, XMPPServiceProtocol>
 
+@property (nonatomic, weak, nullable) NSXPCConnection *parentConnection;
 
 @end

@@ -30,6 +30,9 @@
     XMPPService *exportedObject = [XMPPService new];
     newConnection.exportedObject = exportedObject;
     
+    exportedObject.parentConnection = newConnection;
+    newConnection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(XMPPServiceListener)];
+    
     // Resuming the connection allows the system to deliver more incoming messages.
     [newConnection resume];
     

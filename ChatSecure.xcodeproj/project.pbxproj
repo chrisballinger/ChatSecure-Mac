@@ -119,6 +119,7 @@
 		D9A0F0581DBC40E300B36C81 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/KissXML/KissXML.framework"; sourceTree = "<group>"; };
 		D9A0F0591DBC40E300B36C81 /* ProxyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProxyKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/ProxyKit/ProxyKit.framework"; sourceTree = "<group>"; };
 		D9A0F05A1DBC40E300B36C81 /* XMPPFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMPPFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/XMPPFramework/XMPPFramework.framework"; sourceTree = "<group>"; };
+		D9A495281DBD162D009986B3 /* XMPPServiceListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPPServiceListener.h; sourceTree = "<group>"; };
 		D9AA715C1A2480420005895A /* XMPPServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPServiceManager.h; sourceTree = "<group>"; };
 		D9AA715D1A2480420005895A /* XMPPServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPServiceManager.m; sourceTree = "<group>"; };
 		D9AA71601A248D850005895A /* OTRSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRSecrets.h; sourceTree = "<group>"; };
@@ -289,6 +290,7 @@
 			children = (
 				D93BAA901A1DAF1B0087F30E /* XMPPService.entitlements */,
 				D93BAA831A1DAF110087F30E /* XMPPServiceProtocol.h */,
+				D9A495281DBD162D009986B3 /* XMPPServiceListener.h */,
 				D93BAA841A1DAF110087F30E /* XMPPService.h */,
 				D93BAA851A1DAF110087F30E /* XMPPService.m */,
 				D93BAA871A1DAF110087F30E /* main.m */,
