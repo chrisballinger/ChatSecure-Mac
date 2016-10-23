@@ -12,6 +12,7 @@ Further reading:
 
 1. [App Sandbox in Depth](https://developer.apple.com/library/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html)
 2. [Creating XPC Services](https://developer.apple.com/library/mac/documentation/macosx/conceptual/bpsystemstartup/Chapters/CreatingXPCServices.html)
+3. [XPC - objc.io](https://www.objc.io/issues/14-mac/xpc/)
 
 ## Installation
 
