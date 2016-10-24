@@ -1,4 +1,5 @@
 language: objective-c
+osx_image: xcode8
 
 # Handle git submodules yourself
 # http://stackoverflow.com/a/24600210/805882
@@ -13,13 +14,10 @@ before_install:
 
 install:
   - mv ./ChatSecure/OTRSecrets-Template.m ./ChatSecure/OTRSecrets.m
-  - cp ./Podspecs/XMPPFramework.podspec.json ./Submodules/XMPPFramework/XMPPFramework.podspec.json
-  - export ARCHS="x86_64"   # Only build CPAProxy dependencies for i386 to speed things up
-  - bash ./Submodules/CPAProxy/scripts/build-all.sh
-  - bash ./Submodules/OTRKit/scripts/build-all.sh
 
 before_script:
+  - gem install cocoapods -v 1.1.1 --no-rdoc --no-ri
   - pod install
 script:
-  - xctool -workspace ChatSecure.xcworkspace -scheme ChatSecure -sdk macosx -arch x86_64 build
-
+  - set -o pipefail
+  - xcodebuild -workspace ChatSecure.xcworkspace -scheme ChatSecure -sdk macosx -arch x86_64 build | xcpretty -c

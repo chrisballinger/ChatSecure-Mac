@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "XMPPServiceListener.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @interface XMPPServiceManager : NSObject <XMPPServiceListener>
 
 /**
@@ -22,3 +23,4 @@
               password:(NSString*)password;
 
 @end
+NS_ASSUME_NONNULL_END

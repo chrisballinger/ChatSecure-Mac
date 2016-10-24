@@ -7,68 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD3EE4B150D6E27F37E73057 /* Pods_ChatSecurePods_ChatSecure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */; };
-		D93BAA1F1A1DA73B0087F30E /* OTRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA1E1A1DA73B0087F30E /* OTRAppDelegate.m */; };
-		D93BAA211A1DA73B0087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA201A1DA73B0087F30E /* main.m */; };
-		D93BAA231A1DA73B0087F30E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93BAA221A1DA73B0087F30E /* Images.xcassets */; };
-		D93BAA321A1DA73B0087F30E /* ChatSecureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA311A1DA73B0087F30E /* ChatSecureTests.m */; };
+		155E6EF8A104E177B6E2FF25 /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDF4F655F1018CC870D64AF /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework */; };
+		2266CD74B5038C93A8F9D38A /* Pods_ChatSecurePods_ChatSecure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */; };
 		D93BAA721A1DAF050087F30E /* TorService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA711A1DAF050087F30E /* TorService.m */; };
 		D93BAA741A1DAF050087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA731A1DAF050087F30E /* main.m */; };
-		D93BAA771A1DAF050087F30E /* TorService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA6B1A1DAF050087F30E /* TorService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D93BAA861A1DAF110087F30E /* XMPPService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA851A1DAF110087F30E /* XMPPService.m */; };
 		D93BAA881A1DAF110087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA871A1DAF110087F30E /* main.m */; };
-		D93BAA8B1A1DAF110087F30E /* XMPPService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA7F1A1DAF110087F30E /* XMPPService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D93BAA911A1DB4960087F30E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93BAA241A1DA73B0087F30E /* MainMenu.xib */; };
-		D93BAA9D1A1DB4C60087F30E /* OTRService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA9C1A1DB4C60087F30E /* OTRService.m */; };
-		D93BAA9F1A1DB4C60087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA9E1A1DB4C60087F30E /* main.m */; };
-		D93BAAA21A1DB4C60087F30E /* OTRService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA961A1DB4C60087F30E /* OTRService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D9AA715E1A2480420005895A /* XMPPServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA715D1A2480420005895A /* XMPPServiceManager.m */; };
-		D9AA71621A248D850005895A /* OTRSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA71611A248D850005895A /* OTRSecrets.m */; };
-		D9B114171A2EE73F00AA314A /* OTRDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B114161A2EE73F00AA314A /* OTRDatabaseManager.m */; };
+		D9A495321DBD91AC009986B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A495311DBD91AC009986B3 /* AppDelegate.swift */; };
+		D9A495361DBD91AC009986B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A495351DBD91AC009986B3 /* Assets.xcassets */; };
+		D9A495391DBD91AC009986B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A495371DBD91AC009986B3 /* Main.storyboard */; };
+		D9A495441DBD91AC009986B3 /* ChatSecureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A495431DBD91AC009986B3 /* ChatSecureTests.swift */; };
+		D9A4954C1DBD91F6009986B3 /* TorService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA6B1A1DAF050087F30E /* TorService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9A4954F1DBD91F6009986B3 /* XMPPService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA7F1A1DAF110087F30E /* XMPPService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9A495531DBD928B009986B3 /* OTRSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA71611A248D850005895A /* OTRSecrets.m */; };
+		D9A495541DBD9291009986B3 /* XMPPServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA715D1A2480420005895A /* XMPPServiceManager.m */; };
+		D9D2C1A11DBDA47F00962A25 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */; };
+		D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */; };
 		E2D7252B7294BB4C1F6C75C1 /* Pods_ChatSecurePods_XMPPService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D93BAA2C1A1DA73B0087F30E /* PBXContainerItemProxy */ = {
+		D9A495401DBD91AC009986B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D93BAA101A1DA73B0087F30E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D93BAA171A1DA73B0087F30E;
+			remoteGlobalIDString = D9A4952E1DBD91AC009986B3;
 			remoteInfo = ChatSecure;
 		};
-		D93BAA751A1DAF050087F30E /* PBXContainerItemProxy */ = {
+		D9A4954D1DBD91F6009986B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D93BAA101A1DA73B0087F30E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D93BAA6A1A1DAF050087F30E;
 			remoteInfo = TorService;
 		};
-		D93BAA891A1DAF110087F30E /* PBXContainerItemProxy */ = {
+		D9A495501DBD91F6009986B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D93BAA101A1DA73B0087F30E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D93BAA7E1A1DAF110087F30E;
 			remoteInfo = XMPPService;
 		};
-		D93BAAA01A1DB4C60087F30E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D93BAA101A1DA73B0087F30E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D93BAA951A1DB4C60087F30E;
-			remoteInfo = OTRService;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D93BAA4F1A1DAD240087F30E /* Embed XPC Services */ = {
+		D9A495521DBD91F6009986B3 /* Embed XPC Services */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
 			dstSubfolderSpec = 16;
 			files = (
-				D93BAA8B1A1DAF110087F30E /* XMPPService.xpc in Embed XPC Services */,
-				D93BAAA21A1DB4C60087F30E /* OTRService.xpc in Embed XPC Services */,
-				D93BAA771A1DAF050087F30E /* TorService.xpc in Embed XPC Services */,
+				D9A4954F1DBD91F6009986B3 /* XMPPService.xpc in Embed XPC Services */,
+				D9A4954C1DBD91F6009986B3 /* TorService.xpc in Embed XPC Services */,
 			);
 			name = "Embed XPC Services";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,22 +66,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2FDF4F655F1018CC870D64AF /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376521A125D4A8D4118C6C30 /* Pods-ChatSecurePods-XMPPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-XMPPService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService.release.xcconfig"; sourceTree = "<group>"; };
+		49F060863355A360CCD5A481 /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_ChatSecure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61066028B3B0DA5914DF94BF /* Pods-ChatSecurePods-ChatSecure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure.release.xcconfig"; sourceTree = "<group>"; };
 		6AE9BAB15F95963476F174D0 /* Pods-ChatSecurePods-ChatSecure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure.debug.xcconfig"; sourceTree = "<group>"; };
 		966112E0EEB33C595D811C8C /* Pods-ChatSecurePods-XMPPService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-XMPPService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_XMPPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D93BAA181A1DA73B0087F30E /* ChatSecure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSecure.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D93BAA1C1A1DA73B0087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D93BAA1D1A1DA73B0087F30E /* OTRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTRAppDelegate.h; sourceTree = "<group>"; };
-		D93BAA1E1A1DA73B0087F30E /* OTRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTRAppDelegate.m; sourceTree = "<group>"; };
-		D93BAA201A1DA73B0087F30E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D93BAA221A1DA73B0087F30E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D93BAA251A1DA73B0087F30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D93BAA2B1A1DA73B0087F30E /* ChatSecureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSecureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D93BAA301A1DA73B0087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D93BAA311A1DA73B0087F30E /* ChatSecureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatSecureTests.m; sourceTree = "<group>"; };
+		D5C09B5CAF59D3AC732E478E /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig"; sourceTree = "<group>"; };
 		D93BAA501A1DAD3F0087F30E /* ChatSecure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ChatSecure.entitlements; sourceTree = "<group>"; };
 		D93BAA6B1A1DAF050087F30E /* TorService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = TorService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93BAA6E1A1DAF050087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,43 +90,30 @@
 		D93BAA871A1DAF110087F30E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D93BAA8F1A1DAF170087F30E /* TorService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TorService.entitlements; sourceTree = "<group>"; };
 		D93BAA901A1DAF1B0087F30E /* XMPPService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = XMPPService.entitlements; sourceTree = "<group>"; };
-		D93BAA961A1DB4C60087F30E /* OTRService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = OTRService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
-		D93BAA991A1DB4C60087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D93BAA9A1A1DB4C60087F30E /* OTRServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTRServiceProtocol.h; sourceTree = "<group>"; };
-		D93BAA9B1A1DB4C60087F30E /* OTRService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTRService.h; sourceTree = "<group>"; };
-		D93BAA9C1A1DB4C60087F30E /* OTRService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTRService.m; sourceTree = "<group>"; };
-		D93BAA9E1A1DB4C60087F30E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D93BAAA61A1DB4CA0087F30E /* OTRService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OTRService.entitlements; sourceTree = "<group>"; };
 		D9A0F0561DBC40E300B36C81 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
 		D9A0F0571DBC40E300B36C81 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/CocoaLumberjack/CocoaLumberjack.framework"; sourceTree = "<group>"; };
 		D9A0F0581DBC40E300B36C81 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/KissXML/KissXML.framework"; sourceTree = "<group>"; };
 		D9A0F0591DBC40E300B36C81 /* ProxyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProxyKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/ProxyKit/ProxyKit.framework"; sourceTree = "<group>"; };
 		D9A0F05A1DBC40E300B36C81 /* XMPPFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMPPFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/XMPPFramework/XMPPFramework.framework"; sourceTree = "<group>"; };
 		D9A495281DBD162D009986B3 /* XMPPServiceListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPPServiceListener.h; sourceTree = "<group>"; };
+		D9A4952F1DBD91AC009986B3 /* ChatSecure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSecure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A495311DBD91AC009986B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D9A495351DBD91AC009986B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9A495381DBD91AC009986B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D9A4953A1DBD91AC009986B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9A4953F1DBD91AC009986B3 /* ChatSecureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSecureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A495431DBD91AC009986B3 /* ChatSecureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSecureTests.swift; sourceTree = "<group>"; };
+		D9A495451DBD91AC009986B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9A495561DBD956A009986B3 /* ChatSecure-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatSecure-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9AA715C1A2480420005895A /* XMPPServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPServiceManager.h; sourceTree = "<group>"; };
 		D9AA715D1A2480420005895A /* XMPPServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPServiceManager.m; sourceTree = "<group>"; };
 		D9AA71601A248D850005895A /* OTRSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRSecrets.h; sourceTree = "<group>"; };
 		D9AA71611A248D850005895A /* OTRSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRSecrets.m; sourceTree = "<group>"; };
-		D9B114151A2EE73F00AA314A /* OTRDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRDatabaseManager.h; sourceTree = "<group>"; };
-		D9B114161A2EE73F00AA314A /* OTRDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRDatabaseManager.m; sourceTree = "<group>"; };
+		D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D93BAA151A1DA73B0087F30E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD3EE4B150D6E27F37E73057 /* Pods_ChatSecurePods_ChatSecure.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D93BAA281A1DA73B0087F30E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D93BAA681A1DAF050087F30E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,10 +129,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D93BAA931A1DB4C60087F30E /* Frameworks */ = {
+		D9A4952C1DBD91AC009986B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2266CD74B5038C93A8F9D38A /* Pods_ChatSecurePods_ChatSecure.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A4953C1DBD91AC009986B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155E6EF8A104E177B6E2FF25 /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +158,7 @@
 				D9A0F05A1DBC40E300B36C81 /* XMPPFramework.framework */,
 				60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */,
 				9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */,
+				2FDF4F655F1018CC870D64AF /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +170,8 @@
 				61066028B3B0DA5914DF94BF /* Pods-ChatSecurePods-ChatSecure.release.xcconfig */,
 				966112E0EEB33C595D811C8C /* Pods-ChatSecurePods-XMPPService.debug.xcconfig */,
 				376521A125D4A8D4118C6C30 /* Pods-ChatSecurePods-XMPPService.release.xcconfig */,
+				49F060863355A360CCD5A481 /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig */,
+				D5C09B5CAF59D3AC732E478E /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -198,10 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				D93BAA1A1A1DA73B0087F30E /* ChatSecure */,
-				D93BAA2E1A1DA73B0087F30E /* ChatSecureTests */,
 				D93BAA6C1A1DAF050087F30E /* TorService */,
 				D93BAA801A1DAF110087F30E /* XMPPService */,
-				D93BAA971A1DB4C60087F30E /* OTRService */,
+				D9A495421DBD91AC009986B3 /* ChatSecureTests */,
 				D93BAA191A1DA73B0087F30E /* Products */,
 				81A1807B16CE54452CF0B90B /* Pods */,
 				7CC124C343DCAF8B295A2290 /* Frameworks */,
@@ -211,11 +192,10 @@
 		D93BAA191A1DA73B0087F30E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D93BAA181A1DA73B0087F30E /* ChatSecure.app */,
-				D93BAA2B1A1DA73B0087F30E /* ChatSecureTests.xctest */,
 				D93BAA6B1A1DAF050087F30E /* TorService.xpc */,
 				D93BAA7F1A1DAF110087F30E /* XMPPService.xpc */,
-				D93BAA961A1DB4C60087F30E /* OTRService.xpc */,
+				D9A4952F1DBD91AC009986B3 /* ChatSecure.app */,
+				D9A4953F1DBD91AC009986B3 /* ChatSecureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,45 +203,16 @@
 		D93BAA1A1A1DA73B0087F30E /* ChatSecure */ = {
 			isa = PBXGroup;
 			children = (
-				D9B114151A2EE73F00AA314A /* OTRDatabaseManager.h */,
-				D9B114161A2EE73F00AA314A /* OTRDatabaseManager.m */,
+				D9A495551DBD94B9009986B3 /* Resources */,
+				D9A495311DBD91AC009986B3 /* AppDelegate.swift */,
 				D9AA71601A248D850005895A /* OTRSecrets.h */,
 				D9AA71611A248D850005895A /* OTRSecrets.m */,
-				D93BAA501A1DAD3F0087F30E /* ChatSecure.entitlements */,
 				D9AA715F1A2480470005895A /* XPC Managers */,
-				D93BAA1D1A1DA73B0087F30E /* OTRAppDelegate.h */,
-				D93BAA1E1A1DA73B0087F30E /* OTRAppDelegate.m */,
-				D93BAA221A1DA73B0087F30E /* Images.xcassets */,
-				D93BAA241A1DA73B0087F30E /* MainMenu.xib */,
-				D93BAA1B1A1DA73B0087F30E /* Supporting Files */,
+				D9A495561DBD956A009986B3 /* ChatSecure-Bridging-Header.h */,
+				D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */,
+				D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */,
 			);
 			path = ChatSecure;
-			sourceTree = "<group>";
-		};
-		D93BAA1B1A1DA73B0087F30E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D93BAA1C1A1DA73B0087F30E /* Info.plist */,
-				D93BAA201A1DA73B0087F30E /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D93BAA2E1A1DA73B0087F30E /* ChatSecureTests */ = {
-			isa = PBXGroup;
-			children = (
-				D93BAA311A1DA73B0087F30E /* ChatSecureTests.m */,
-				D93BAA2F1A1DA73B0087F30E /* Supporting Files */,
-			);
-			path = ChatSecureTests;
-			sourceTree = "<group>";
-		};
-		D93BAA2F1A1DA73B0087F30E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D93BAA301A1DA73B0087F30E /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D93BAA6C1A1DAF050087F30E /* TorService */ = {
@@ -307,25 +258,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D93BAA971A1DB4C60087F30E /* OTRService */ = {
+		D9A495421DBD91AC009986B3 /* ChatSecureTests */ = {
 			isa = PBXGroup;
 			children = (
-				D93BAAA61A1DB4CA0087F30E /* OTRService.entitlements */,
-				D93BAA9A1A1DB4C60087F30E /* OTRServiceProtocol.h */,
-				D93BAA9B1A1DB4C60087F30E /* OTRService.h */,
-				D93BAA9C1A1DB4C60087F30E /* OTRService.m */,
-				D93BAA9E1A1DB4C60087F30E /* main.m */,
-				D93BAA981A1DB4C60087F30E /* Supporting Files */,
+				D9A495431DBD91AC009986B3 /* ChatSecureTests.swift */,
+				D9A495451DBD91AC009986B3 /* Info.plist */,
 			);
-			path = OTRService;
+			path = ChatSecureTests;
 			sourceTree = "<group>";
 		};
-		D93BAA981A1DB4C60087F30E /* Supporting Files */ = {
+		D9A495551DBD94B9009986B3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D93BAA991A1DB4C60087F30E /* Info.plist */,
+				D9A495351DBD91AC009986B3 /* Assets.xcassets */,
+				D9A495371DBD91AC009986B3 /* Main.storyboard */,
+				D9A4953A1DBD91AC009986B3 /* Info.plist */,
+				D93BAA501A1DAD3F0087F30E /* ChatSecure.entitlements */,
 			);
-			name = "Supporting Files";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		D9AA715F1A2480470005895A /* XPC Managers */ = {
@@ -340,48 +290,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D93BAA171A1DA73B0087F30E /* ChatSecure */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D93BAA351A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecure" */;
-			buildPhases = (
-				55B02A47401D6C3D5A85F96A /* [CP] Check Pods Manifest.lock */,
-				D93BAA141A1DA73B0087F30E /* Sources */,
-				D93BAA151A1DA73B0087F30E /* Frameworks */,
-				D93BAA161A1DA73B0087F30E /* Resources */,
-				D93BAA4F1A1DAD240087F30E /* Embed XPC Services */,
-				ACC1105AFF5684BB26814131 /* [CP] Embed Pods Frameworks */,
-				E9B58D7821F7FF4175859581 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D93BAA761A1DAF050087F30E /* PBXTargetDependency */,
-				D93BAA8A1A1DAF110087F30E /* PBXTargetDependency */,
-				D93BAAA11A1DB4C60087F30E /* PBXTargetDependency */,
-			);
-			name = ChatSecure;
-			productName = ChatSecure;
-			productReference = D93BAA181A1DA73B0087F30E /* ChatSecure.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D93BAA2A1A1DA73B0087F30E /* ChatSecureTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D93BAA381A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecureTests" */;
-			buildPhases = (
-				D93BAA271A1DA73B0087F30E /* Sources */,
-				D93BAA281A1DA73B0087F30E /* Frameworks */,
-				D93BAA291A1DA73B0087F30E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D93BAA2D1A1DA73B0087F30E /* PBXTargetDependency */,
-			);
-			name = ChatSecureTests;
-			productName = ChatSecureTests;
-			productReference = D93BAA2B1A1DA73B0087F30E /* ChatSecureTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		D93BAA6A1A1DAF050087F30E /* TorService */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D93BAA781A1DAF050087F30E /* Build configuration list for PBXNativeTarget "TorService" */;
@@ -418,22 +326,49 @@
 			productReference = D93BAA7F1A1DAF110087F30E /* XMPPService.xpc */;
 			productType = "com.apple.product-type.xpc-service";
 		};
-		D93BAA951A1DB4C60087F30E /* OTRService */ = {
+		D9A4952E1DBD91AC009986B3 /* ChatSecure */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D93BAAA31A1DB4C60087F30E /* Build configuration list for PBXNativeTarget "OTRService" */;
+			buildConfigurationList = D9A495461DBD91AC009986B3 /* Build configuration list for PBXNativeTarget "ChatSecure" */;
 			buildPhases = (
-				D93BAA921A1DB4C60087F30E /* Sources */,
-				D93BAA931A1DB4C60087F30E /* Frameworks */,
-				D93BAA941A1DB4C60087F30E /* Resources */,
+				D2BD4B5E58013B7148E8F08F /* [CP] Check Pods Manifest.lock */,
+				D9A4952B1DBD91AC009986B3 /* Sources */,
+				D9A4952C1DBD91AC009986B3 /* Frameworks */,
+				D9A4952D1DBD91AC009986B3 /* Resources */,
+				D9A495521DBD91F6009986B3 /* Embed XPC Services */,
+				743083AE2E5B1B72204E9246 /* [CP] Embed Pods Frameworks */,
+				D3E27AE1285C8B3BF74864AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D9A4954E1DBD91F6009986B3 /* PBXTargetDependency */,
+				D9A495511DBD91F6009986B3 /* PBXTargetDependency */,
 			);
-			name = OTRService;
-			productName = OTRService;
-			productReference = D93BAA961A1DB4C60087F30E /* OTRService.xpc */;
-			productType = "com.apple.product-type.xpc-service";
+			name = ChatSecure;
+			productName = ChatSecure;
+			productReference = D9A4952F1DBD91AC009986B3 /* ChatSecure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9A4953E1DBD91AC009986B3 /* ChatSecureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9A495491DBD91AC009986B3 /* Build configuration list for PBXNativeTarget "ChatSecureTests" */;
+			buildPhases = (
+				379940A6C139970EBC36C07B /* [CP] Check Pods Manifest.lock */,
+				D9A4953B1DBD91AC009986B3 /* Sources */,
+				D9A4953C1DBD91AC009986B3 /* Frameworks */,
+				D9A4953D1DBD91AC009986B3 /* Resources */,
+				A95DA2DB34FA9531D0E827FD /* [CP] Embed Pods Frameworks */,
+				E1F5D2D258FD59156F2A9687 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9A495411DBD91AC009986B3 /* PBXTargetDependency */,
+			);
+			name = ChatSecureTests;
+			productName = ChatSecureTests;
+			productReference = D9A4953F1DBD91AC009986B3 /* ChatSecureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -442,24 +377,10 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OTR;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Christopher Ballinger";
 				TargetAttributes = {
-					D93BAA171A1DA73B0087F30E = {
-						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 4T8JLQR6GR;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Sandbox = {
-								enabled = 1;
-							};
-						};
-					};
-					D93BAA2A1A1DA73B0087F30E = {
-						CreatedOnToolsVersion = 6.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = D93BAA171A1DA73B0087F30E;
-					};
 					D93BAA6A1A1DAF050087F30E = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 4T8JLQR6GR;
@@ -480,15 +401,21 @@
 							};
 						};
 					};
-					D93BAA951A1DB4C60087F30E = {
-						CreatedOnToolsVersion = 6.1;
+					D9A4952E1DBD91AC009986B3 = {
+						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4T8JLQR6GR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
+					};
+					D9A4953E1DBD91AC009986B3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4T8JLQR6GR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D9A4952E1DBD91AC009986B3;
 					};
 				};
 			};
@@ -505,32 +432,15 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D93BAA171A1DA73B0087F30E /* ChatSecure */,
-				D93BAA2A1A1DA73B0087F30E /* ChatSecureTests */,
 				D93BAA6A1A1DAF050087F30E /* TorService */,
 				D93BAA7E1A1DAF110087F30E /* XMPPService */,
-				D93BAA951A1DB4C60087F30E /* OTRService */,
+				D9A4952E1DBD91AC009986B3 /* ChatSecure */,
+				D9A4953E1DBD91AC009986B3 /* ChatSecureTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D93BAA161A1DA73B0087F30E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D93BAA231A1DA73B0087F30E /* Images.xcassets in Resources */,
-				D93BAA911A1DB4960087F30E /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D93BAA291A1DA73B0087F30E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D93BAA691A1DAF050087F30E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,7 +455,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D93BAA941A1DB4C60087F30E /* Resources */ = {
+		D9A4952D1DBD91AC009986B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A495361DBD91AC009986B3 /* Assets.xcassets in Resources */,
+				D9A495391DBD91AC009986B3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A4953D1DBD91AC009986B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -570,7 +489,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		55B02A47401D6C3D5A85F96A /* [CP] Check Pods Manifest.lock */ = {
+		379940A6C139970EBC36C07B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -585,7 +504,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		ACC1105AFF5684BB26814131 /* [CP] Embed Pods Frameworks */ = {
+		743083AE2E5B1B72204E9246 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -598,6 +517,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A95DA2DB34FA9531D0E827FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D07B20E26D74EE1A0161E6AB /* [CP] Check Pods Manifest.lock */ = {
@@ -615,7 +549,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E9B58D7821F7FF4175859581 /* [CP] Copy Pods Resources */ = {
+		D2BD4B5E58013B7148E8F08F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3E27AE1285C8B3BF74864AC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -630,29 +579,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1F5D2D258FD59156F2A9687 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D93BAA141A1DA73B0087F30E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D93BAA211A1DA73B0087F30E /* main.m in Sources */,
-				D9B114171A2EE73F00AA314A /* OTRDatabaseManager.m in Sources */,
-				D9AA71621A248D850005895A /* OTRSecrets.m in Sources */,
-				D9AA715E1A2480420005895A /* XMPPServiceManager.m in Sources */,
-				D93BAA1F1A1DA73B0087F30E /* OTRAppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D93BAA271A1DA73B0087F30E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D93BAA321A1DA73B0087F30E /* ChatSecureTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D93BAA671A1DAF050087F30E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -671,47 +615,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D93BAA921A1DB4C60087F30E /* Sources */ = {
+		D9A4952B1DBD91AC009986B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D93BAA9F1A1DB4C60087F30E /* main.m in Sources */,
-				D93BAA9D1A1DB4C60087F30E /* OTRService.m in Sources */,
+				D9A495541DBD9291009986B3 /* XMPPServiceManager.m in Sources */,
+				D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */,
+				D9A495531DBD928B009986B3 /* OTRSecrets.m in Sources */,
+				D9D2C1A11DBDA47F00962A25 /* MessagesViewController.swift in Sources */,
+				D9A495321DBD91AC009986B3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A4953B1DBD91AC009986B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A495441DBD91AC009986B3 /* ChatSecureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D93BAA2D1A1DA73B0087F30E /* PBXTargetDependency */ = {
+		D9A495411DBD91AC009986B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D93BAA171A1DA73B0087F30E /* ChatSecure */;
-			targetProxy = D93BAA2C1A1DA73B0087F30E /* PBXContainerItemProxy */;
+			target = D9A4952E1DBD91AC009986B3 /* ChatSecure */;
+			targetProxy = D9A495401DBD91AC009986B3 /* PBXContainerItemProxy */;
 		};
-		D93BAA761A1DAF050087F30E /* PBXTargetDependency */ = {
+		D9A4954E1DBD91F6009986B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D93BAA6A1A1DAF050087F30E /* TorService */;
-			targetProxy = D93BAA751A1DAF050087F30E /* PBXContainerItemProxy */;
+			targetProxy = D9A4954D1DBD91F6009986B3 /* PBXContainerItemProxy */;
 		};
-		D93BAA8A1A1DAF110087F30E /* PBXTargetDependency */ = {
+		D9A495511DBD91F6009986B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D93BAA7E1A1DAF110087F30E /* XMPPService */;
-			targetProxy = D93BAA891A1DAF110087F30E /* PBXContainerItemProxy */;
-		};
-		D93BAAA11A1DB4C60087F30E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D93BAA951A1DB4C60087F30E /* OTRService */;
-			targetProxy = D93BAAA01A1DB4C60087F30E /* PBXContainerItemProxy */;
+			targetProxy = D9A495501DBD91F6009986B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D93BAA241A1DA73B0087F30E /* MainMenu.xib */ = {
+		D9A495371DBD91AC009986B3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D93BAA251A1DA73B0087F30E /* Base */,
+				D9A495381DBD91AC009986B3 /* Base */,
 			);
-			name = MainMenu.xib;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -758,6 +708,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -795,78 +746,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		D93BAA361A1DA73B0087F30E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6AE9BAB15F95963476F174D0 /* Pods-ChatSecurePods-ChatSecure.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ChatSecure/ChatSecure.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4T8JLQR6GR;
-				INFOPLIST_FILE = ChatSecure/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		D93BAA371A1DA73B0087F30E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61066028B3B0DA5914DF94BF /* Pods-ChatSecurePods-ChatSecure.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ChatSecure/ChatSecure.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4T8JLQR6GR;
-				INFOPLIST_FILE = ChatSecure/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		D93BAA391A1DA73B0087F30E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ChatSecureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSecure.app/Contents/MacOS/ChatSecure";
-			};
-			name = Debug;
-		};
-		D93BAA3A1A1DA73B0087F30E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ChatSecureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSecure.app/Contents/MacOS/ChatSecure";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -938,35 +818,95 @@
 			};
 			name = Release;
 		};
-		D93BAAA41A1DB4C60087F30E /* Debug */ = {
+		D9A495471DBD91AC009986B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AE9BAB15F95963476F174D0 /* Pods-ChatSecurePods-ChatSecure.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = OTRService/OTRService.entitlements;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = ChatSecure/ChatSecure.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 4T8JLQR6GR;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OTRService/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
+				INFOPLIST_FILE = ChatSecure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisballinger.ChatSecure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChatSecure/ChatSecure-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D93BAAA51A1DB4C60087F30E /* Release */ = {
+		D9A495481DBD91AC009986B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61066028B3B0DA5914DF94BF /* Pods-ChatSecurePods-ChatSecure.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = OTRService/OTRService.entitlements;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = ChatSecure/ChatSecure.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 4T8JLQR6GR;
-				INFOPLIST_FILE = OTRService/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
+				INFOPLIST_FILE = ChatSecure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisballinger.ChatSecure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChatSecure/ChatSecure-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		D9A4954A1DBD91AC009986B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49F060863355A360CCD5A481 /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4T8JLQR6GR;
+				INFOPLIST_FILE = ChatSecureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.ChatSecureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSecure.app/Contents/MacOS/ChatSecure";
+			};
+			name = Debug;
+		};
+		D9A4954B1DBD91AC009986B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C09B5CAF59D3AC732E478E /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 4T8JLQR6GR;
+				INFOPLIST_FILE = ChatSecureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.ChatSecureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSecure.app/Contents/MacOS/ChatSecure";
 			};
 			name = Release;
 		};
@@ -978,24 +918,6 @@
 			buildConfigurations = (
 				D93BAA331A1DA73B0087F30E /* Debug */,
 				D93BAA341A1DA73B0087F30E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D93BAA351A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecure" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D93BAA361A1DA73B0087F30E /* Debug */,
-				D93BAA371A1DA73B0087F30E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D93BAA381A1DA73B0087F30E /* Build configuration list for PBXNativeTarget "ChatSecureTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D93BAA391A1DA73B0087F30E /* Debug */,
-				D93BAA3A1A1DA73B0087F30E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1018,11 +940,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D93BAAA31A1DB4C60087F30E /* Build configuration list for PBXNativeTarget "OTRService" */ = {
+		D9A495461DBD91AC009986B3 /* Build configuration list for PBXNativeTarget "ChatSecure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D93BAAA41A1DB4C60087F30E /* Debug */,
-				D93BAAA51A1DB4C60087F30E /* Release */,
+				D9A495471DBD91AC009986B3 /* Debug */,
+				D9A495481DBD91AC009986B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9A495491DBD91AC009986B3 /* Build configuration list for PBXNativeTarget "ChatSecureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9A4954A1DBD91AC009986B3 /* Debug */,
+				D9A4954B1DBD91AC009986B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

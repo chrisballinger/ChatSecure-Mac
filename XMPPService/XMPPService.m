@@ -13,7 +13,7 @@
 
 // Log levels: off, error, warn, info, verbose
 #if DEBUG
-static const int xmppLogLevel = XMPP_LOG_LEVEL_OFF;
+static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
 #else
 static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 #endif
@@ -32,9 +32,6 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 
 @property (nonatomic, strong) NSString *password;
 
-@property (nonatomic, strong, readonly) dispatch_queue_t connectionStatusQueue;
-@property (nonatomic, strong, readonly) dispatch_queue_t incomingMessageQueue;
-
 @end
 
 @implementation XMPPService
@@ -43,8 +40,6 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
     if (self = [super init]) {
         [self setupStream];
         [NSProcessInfo processInfo].automaticTerminationSupportEnabled = YES;
-        _connectionStatusQueue = dispatch_queue_create("Connection Status Queue", 0);
-        _incomingMessageQueue = dispatch_queue_create("Incoming Message Queue", 0);
     }
     return self;
 }
@@ -55,15 +50,11 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_INFO;
 }
 
 - (void) updateConnectionStatus:(XMPPConnectionStatus)connectionStatus error:(NSError*)error {
-    dispatch_async(_connectionStatusQueue, ^{
-        [self.xmppListener handleConnectionStatus:connectionStatus streamJID:self.xmppStream.myJID error:error streamTag:self.xmppStream.tag];
-    });
+    [self.xmppListener handleConnectionStatus:connectionStatus streamJID:self.xmppStream.myJID error:error streamTag:self.xmppStream.tag];
 }
 
 - (void) receivedMessage:(XMPPMessage*)message {
-    dispatch_async(_incomingMessageQueue, ^{
-        [self.xmppListener handleIncomingMessage:message streamTag:self.xmppStream.tag];
-    });
+    [self.xmppListener handleIncomingMessage:message streamTag:self.xmppStream.tag];
 }
 
 #pragma mark XMPPServiceProtocol methods

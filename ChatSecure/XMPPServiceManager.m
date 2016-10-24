@@ -56,7 +56,7 @@
 
 #pragma mark XMPPServiceListener
 
-- (void) handleIncomingMessage:(XMPPMessage*)message streamTag:(id<NSSecureCoding>)streamTag {
+- (void) handleIncomingMessage:(XMPPMessage*)message streamTag:(NSString*)streamTag {
     NSLog(@"handleIncomingMessage: %@ %@ %@", message, [message from], streamTag);
     
     if ([message isMessageWithBody]) {
