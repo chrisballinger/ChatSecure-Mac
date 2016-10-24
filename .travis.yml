@@ -17,6 +17,7 @@ install:
 
 before_script:
   - gem install cocoapods -v 1.1.1 --no-rdoc --no-ri
+  - pod repo update --silent
   - pod install
 script:
   - set -o pipefail
