@@ -8,10 +8,15 @@ abstract_target 'ChatSecurePods' do
 
 	target 'ChatSecure' do
 		pod 'PureLayout', '~> 3.0'
-  	pod 'YapDatabase/SQLCipher', '~> 2.9'
-  	pod 'Mantle', '~> 2.1'
-  	target 'ChatSecureTests'
+	  	pod 'YapDatabase/SQLCipher', '~> 2.9'
+	  	pod 'Mantle', '~> 2.1'
+	  	target 'ChatSecureTests'
 	end
-
 	target 'XMPPService'
+end
+
+target 'LuaService' do
+	# pod 'lua', '~> 5.3.1'
+	pod 'lua51', :podspec => 'Podspecs/lua51.podspec.json'
+	target 'LuaServiceTests'
 end

@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 // The protocol that this service will vend as its API. This header file will also need to be visible to the process hosting the service.
 @protocol LuaServiceProtocol
 
-// Replace the API of this protocol with an API appropriate to the service you are vending.
-- (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
+
+- (void)runProsody:(void (^)(NSString *result,  NSError* _Nullable error))completion;
+/** Runs a script at path. containingDir is usually the directory above the script */
+- (void)runPath:(NSString*)scriptPath containingDir:(NSString*)containingDir completion:(void (^)(NSString *result,  NSError* _Nullable error))completion;
+
+- (void) terminate;
     
 @end
+
+NS_ASSUME_NONNULL_END
 
 /*
  To use the service from an application or other process, use NSXPCConnection to establish a connection to the service by doing something like this:

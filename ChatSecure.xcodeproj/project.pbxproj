@@ -9,10 +9,26 @@
 /* Begin PBXBuildFile section */
 		155E6EF8A104E177B6E2FF25 /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDF4F655F1018CC870D64AF /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework */; };
 		2266CD74B5038C93A8F9D38A /* Pods_ChatSecurePods_ChatSecure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */; };
+		3ADCEDE3C4F6424088C466F5 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE29B75FBC11CEEDA632AE1 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework */; };
+		9F8BE290ACDEAA50BAD76427 /* Pods_ChatSecurePods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D86B0669B14DA4230A9402 /* Pods_ChatSecurePods_LuaService.framework */; };
+		B9E3A90C96FBFF1FA8DF8C18 /* Pods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */; };
 		D93BAA721A1DAF050087F30E /* TorService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA711A1DAF050087F30E /* TorService.m */; };
 		D93BAA741A1DAF050087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA731A1DAF050087F30E /* main.m */; };
 		D93BAA861A1DAF110087F30E /* XMPPService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA851A1DAF110087F30E /* XMPPService.m */; };
 		D93BAA881A1DAF110087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA871A1DAF110087F30E /* main.m */; };
+		D9A266F71DC57F71003616CF /* LuaService.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A266F61DC57F71003616CF /* LuaService.m */; };
+		D9A266F91DC57F71003616CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A266F81DC57F71003616CF /* main.m */; };
+		D9A266FD1DC57F71003616CF /* LuaService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D9A266F21DC57F71003616CF /* LuaService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9A267021DC58950003616CF /* LuaServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A267011DC58950003616CF /* LuaServiceManager.swift */; };
+		D9A267051DC68A7A003616CF /* prosody in Resources */ = {isa = PBXBuildFile; fileRef = D9A267041DC68A7A003616CF /* prosody */; };
+		D9A267131DC68C13003616CF /* LuaService.h in Sources */ = {isa = PBXBuildFile; fileRef = D9A266F51DC57F71003616CF /* LuaService.h */; };
+		D9A267141DC68C13003616CF /* LuaService.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A266F61DC57F71003616CF /* LuaService.m */; };
+		D9A267151DC68DFE003616CF /* prosody in Resources */ = {isa = PBXBuildFile; fileRef = D9A267041DC68A7A003616CF /* prosody */; };
+		D9A267171DC693BF003616CF /* LuaServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A267161DC693BF003616CF /* LuaServiceTests.m */; };
+		D9A2671C1DC7069B003616CF /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A267181DC6E683003616CF /* libcrypto.1.0.0.dylib */; };
+		D9A2671D1DC7069B003616CF /* libidn.11.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A267191DC6E684003616CF /* libidn.11.dylib */; };
+		D9A2671F1DC70C9A003616CF /* libexpat.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A2671E1DC70C9A003616CF /* libexpat.1.dylib */; };
+		D9A267211DC70CD0003616CF /* libssl.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A267201DC70CD0003616CF /* libssl.1.0.0.dylib */; };
 		D9A495321DBD91AC009986B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A495311DBD91AC009986B3 /* AppDelegate.swift */; };
 		D9A495361DBD91AC009986B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A495351DBD91AC009986B3 /* Assets.xcassets */; };
 		D9A495391DBD91AC009986B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A495371DBD91AC009986B3 /* Main.storyboard */; };
@@ -24,9 +40,17 @@
 		D9D2C1A11DBDA47F00962A25 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */; };
 		D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */; };
 		E2D7252B7294BB4C1F6C75C1 /* Pods_ChatSecurePods_XMPPService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */; };
+		F60CAB2FCFF9DAF43BD5E129 /* Pods_LuaService_LuaServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85FEF3C3703E2628B8B229C /* Pods_LuaService_LuaServiceTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D9A266FB1DC57F71003616CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D93BAA101A1DA73B0087F30E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9A266F11DC57F71003616CF;
+			remoteInfo = LuaService;
+		};
 		D9A495401DBD91AC009986B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D93BAA101A1DA73B0087F30E /* Project object */;
@@ -59,6 +83,7 @@
 			files = (
 				D9A4954F1DBD91F6009986B3 /* XMPPService.xpc in Embed XPC Services */,
 				D9A4954C1DBD91F6009986B3 /* TorService.xpc in Embed XPC Services */,
+				D9A266FD1DC57F71003616CF /* LuaService.xpc in Embed XPC Services */,
 			);
 			name = "Embed XPC Services";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,15 +91,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		182A21DA4102D6B7D9BA615A /* Pods-ChatSecurePods-LuaService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-LuaService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-LuaService/Pods-ChatSecurePods-LuaService.debug.xcconfig"; sourceTree = "<group>"; };
 		2FDF4F655F1018CC870D64AF /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		315FD5A608AB07E6ADECE6C3 /* Pods-LuaService-LuaServiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuaService-LuaServiceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuaService-LuaServiceTests/Pods-LuaService-LuaServiceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		376521A125D4A8D4118C6C30 /* Pods-ChatSecurePods-XMPPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-XMPPService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService.release.xcconfig"; sourceTree = "<group>"; };
+		462632EA88EDDFFA71EAFF2F /* Pods-LuaService-LuaServiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuaService-LuaServiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuaService-LuaServiceTests/Pods-LuaService-LuaServiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		49F060863355A360CCD5A481 /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_ChatSecure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61066028B3B0DA5914DF94BF /* Pods-ChatSecurePods-ChatSecure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure.release.xcconfig"; sourceTree = "<group>"; };
+		64D86B0669B14DA4230A9402 /* Pods_ChatSecurePods_LuaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_LuaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE9BAB15F95963476F174D0 /* Pods-ChatSecurePods-ChatSecure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure.debug.xcconfig"; sourceTree = "<group>"; };
 		966112E0EEB33C595D811C8C /* Pods-ChatSecurePods-XMPPService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-XMPPService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService.debug.xcconfig"; sourceTree = "<group>"; };
+		981306B139111A420D018B72 /* Pods-LuaService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuaService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuaService/Pods-LuaService.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_XMPPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A85FEF3C3703E2628B8B229C /* Pods_LuaService_LuaServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuaService_LuaServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6D454512ADB21FD64FF9D35 /* Pods-LuaService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuaService.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuaService/Pods-LuaService.release.xcconfig"; sourceTree = "<group>"; };
+		D4089C40E33E3E2AC8120265 /* Pods-ChatSecurePods-LuaService-LuaServiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-LuaService-LuaServiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-LuaService-LuaServiceTests/Pods-ChatSecurePods-LuaService-LuaServiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		D5C09B5CAF59D3AC732E478E /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig"; sourceTree = "<group>"; };
+		D5D472206986F94AF84CCFE3 /* Pods-ChatSecurePods-LuaService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-LuaService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-LuaService/Pods-ChatSecurePods-LuaService.release.xcconfig"; sourceTree = "<group>"; };
 		D93BAA501A1DAD3F0087F30E /* ChatSecure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ChatSecure.entitlements; sourceTree = "<group>"; };
 		D93BAA6B1A1DAF050087F30E /* TorService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = TorService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93BAA6E1A1DAF050087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +130,23 @@
 		D9A0F0581DBC40E300B36C81 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/KissXML/KissXML.framework"; sourceTree = "<group>"; };
 		D9A0F0591DBC40E300B36C81 /* ProxyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProxyKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/ProxyKit/ProxyKit.framework"; sourceTree = "<group>"; };
 		D9A0F05A1DBC40E300B36C81 /* XMPPFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMPPFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/ChatSecure-auoozdbilwdwkiczbwudfwlbwswm/Build/Products/Debug/XMPPFramework/XMPPFramework.framework"; sourceTree = "<group>"; };
+		D9A266F21DC57F71003616CF /* LuaService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = LuaService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A266F41DC57F71003616CF /* LuaServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuaServiceProtocol.h; sourceTree = "<group>"; };
+		D9A266F51DC57F71003616CF /* LuaService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuaService.h; sourceTree = "<group>"; };
+		D9A266F61DC57F71003616CF /* LuaService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuaService.m; sourceTree = "<group>"; };
+		D9A266F81DC57F71003616CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D9A266FA1DC57F71003616CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9A267011DC58950003616CF /* LuaServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuaServiceManager.swift; sourceTree = "<group>"; };
+		D9A267031DC591E4003616CF /* LuaService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LuaService.entitlements; sourceTree = "<group>"; };
+		D9A267041DC68A7A003616CF /* prosody */ = {isa = PBXFileReference; lastKnownFileType = folder; path = prosody; sourceTree = "<group>"; };
+		D9A2670A1DC68B0C003616CF /* LuaServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuaServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A2670E1DC68B0C003616CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9A267121DC68B88003616CF /* LuaServiceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LuaServiceTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9A267161DC693BF003616CF /* LuaServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaServiceTests.m; sourceTree = "<group>"; };
+		D9A267181DC6E683003616CF /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = vendor/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
+		D9A267191DC6E684003616CF /* libidn.11.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.11.dylib; path = vendor/libidn.11.dylib; sourceTree = "<group>"; };
+		D9A2671E1DC70C9A003616CF /* libexpat.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libexpat.1.dylib; path = vendor/libexpat.1.dylib; sourceTree = "<group>"; };
+		D9A267201DC70CD0003616CF /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = vendor/libssl.1.0.0.dylib; sourceTree = "<group>"; };
 		D9A495281DBD162D009986B3 /* XMPPServiceListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPPServiceListener.h; sourceTree = "<group>"; };
 		D9A4952F1DBD91AC009986B3 /* ChatSecure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSecure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A495311DBD91AC009986B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +163,8 @@
 		D9AA71611A248D850005895A /* OTRSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRSecrets.m; sourceTree = "<group>"; };
 		D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		E948395995B61BD764B6BED2 /* Pods-ChatSecurePods-LuaService-LuaServiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-LuaService-LuaServiceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-LuaService-LuaServiceTests/Pods-ChatSecurePods-LuaService-LuaServiceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ECE29B75FBC11CEEDA632AE1 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_LuaService_LuaServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +180,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D7252B7294BB4C1F6C75C1 /* Pods_ChatSecurePods_XMPPService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A266EF1DC57F71003616CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8BE290ACDEAA50BAD76427 /* Pods_ChatSecurePods_LuaService.framework in Frameworks */,
+				B9E3A90C96FBFF1FA8DF8C18 /* Pods_LuaService.framework in Frameworks */,
+				D9A267211DC70CD0003616CF /* libssl.1.0.0.dylib in Frameworks */,
+				D9A2671C1DC7069B003616CF /* libcrypto.1.0.0.dylib in Frameworks */,
+				D9A2671D1DC7069B003616CF /* libidn.11.dylib in Frameworks */,
+				D9A2671F1DC70C9A003616CF /* libexpat.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A267071DC68B0C003616CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ADCEDE3C4F6424088C466F5 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework in Frameworks */,
+				F60CAB2FCFF9DAF43BD5E129 /* Pods_LuaService_LuaServiceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +235,10 @@
 				60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */,
 				9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */,
 				2FDF4F655F1018CC870D64AF /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework */,
+				64D86B0669B14DA4230A9402 /* Pods_ChatSecurePods_LuaService.framework */,
+				ECE29B75FBC11CEEDA632AE1 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework */,
+				573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */,
+				A85FEF3C3703E2628B8B229C /* Pods_LuaService_LuaServiceTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,6 +252,14 @@
 				376521A125D4A8D4118C6C30 /* Pods-ChatSecurePods-XMPPService.release.xcconfig */,
 				49F060863355A360CCD5A481 /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig */,
 				D5C09B5CAF59D3AC732E478E /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig */,
+				182A21DA4102D6B7D9BA615A /* Pods-ChatSecurePods-LuaService.debug.xcconfig */,
+				D5D472206986F94AF84CCFE3 /* Pods-ChatSecurePods-LuaService.release.xcconfig */,
+				E948395995B61BD764B6BED2 /* Pods-ChatSecurePods-LuaService-LuaServiceTests.debug.xcconfig */,
+				D4089C40E33E3E2AC8120265 /* Pods-ChatSecurePods-LuaService-LuaServiceTests.release.xcconfig */,
+				981306B139111A420D018B72 /* Pods-LuaService.debug.xcconfig */,
+				C6D454512ADB21FD64FF9D35 /* Pods-LuaService.release.xcconfig */,
+				315FD5A608AB07E6ADECE6C3 /* Pods-LuaService-LuaServiceTests.debug.xcconfig */,
+				462632EA88EDDFFA71EAFF2F /* Pods-LuaService-LuaServiceTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -183,6 +271,8 @@
 				D93BAA6C1A1DAF050087F30E /* TorService */,
 				D93BAA801A1DAF110087F30E /* XMPPService */,
 				D9A495421DBD91AC009986B3 /* ChatSecureTests */,
+				D9A266F31DC57F71003616CF /* LuaService */,
+				D9A2670B1DC68B0C003616CF /* LuaServiceTests */,
 				D93BAA191A1DA73B0087F30E /* Products */,
 				81A1807B16CE54452CF0B90B /* Pods */,
 				7CC124C343DCAF8B295A2290 /* Frameworks */,
@@ -196,6 +286,8 @@
 				D93BAA7F1A1DAF110087F30E /* XMPPService.xpc */,
 				D9A4952F1DBD91AC009986B3 /* ChatSecure.app */,
 				D9A4953F1DBD91AC009986B3 /* ChatSecureTests.xctest */,
+				D9A266F21DC57F71003616CF /* LuaService.xpc */,
+				D9A2670A1DC68B0C003616CF /* LuaServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,6 +350,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D9A266F31DC57F71003616CF /* LuaService */ = {
+			isa = PBXGroup;
+			children = (
+				D9A267201DC70CD0003616CF /* libssl.1.0.0.dylib */,
+				D9A2671E1DC70C9A003616CF /* libexpat.1.dylib */,
+				D9A267181DC6E683003616CF /* libcrypto.1.0.0.dylib */,
+				D9A267191DC6E684003616CF /* libidn.11.dylib */,
+				D9A267041DC68A7A003616CF /* prosody */,
+				D9A267031DC591E4003616CF /* LuaService.entitlements */,
+				D9A266F41DC57F71003616CF /* LuaServiceProtocol.h */,
+				D9A266F51DC57F71003616CF /* LuaService.h */,
+				D9A266F61DC57F71003616CF /* LuaService.m */,
+				D9A266F81DC57F71003616CF /* main.m */,
+				D9A266FA1DC57F71003616CF /* Info.plist */,
+			);
+			path = LuaService;
+			sourceTree = "<group>";
+		};
+		D9A2670B1DC68B0C003616CF /* LuaServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9A267121DC68B88003616CF /* LuaServiceTests-Bridging-Header.h */,
+				D9A267161DC693BF003616CF /* LuaServiceTests.m */,
+				D9A2670E1DC68B0C003616CF /* Info.plist */,
+			);
+			path = LuaServiceTests;
+			sourceTree = "<group>";
+		};
 		D9A495421DBD91AC009986B3 /* ChatSecureTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +401,7 @@
 		D9AA715F1A2480470005895A /* XPC Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D9A267011DC58950003616CF /* LuaServiceManager.swift */,
 				D9AA715C1A2480420005895A /* XMPPServiceManager.h */,
 				D9AA715D1A2480420005895A /* XMPPServiceManager.m */,
 			);
@@ -326,6 +447,45 @@
 			productReference = D93BAA7F1A1DAF110087F30E /* XMPPService.xpc */;
 			productType = "com.apple.product-type.xpc-service";
 		};
+		D9A266F11DC57F71003616CF /* LuaService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9A267001DC57F71003616CF /* Build configuration list for PBXNativeTarget "LuaService" */;
+			buildPhases = (
+				633C787319B78110310ADE29 /* [CP] Check Pods Manifest.lock */,
+				D9A266EE1DC57F71003616CF /* Sources */,
+				D9A266EF1DC57F71003616CF /* Frameworks */,
+				D9A266F01DC57F71003616CF /* Resources */,
+				87F7EDC98A0E6F3579BC70C3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LuaService;
+			productName = LuaService;
+			productReference = D9A266F21DC57F71003616CF /* LuaService.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
+		D9A267091DC68B0C003616CF /* LuaServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9A2670F1DC68B0C003616CF /* Build configuration list for PBXNativeTarget "LuaServiceTests" */;
+			buildPhases = (
+				1D239B6D82E68FD842B4FA88 /* [CP] Check Pods Manifest.lock */,
+				D9A267061DC68B0C003616CF /* Sources */,
+				D9A267071DC68B0C003616CF /* Frameworks */,
+				D9A267081DC68B0C003616CF /* Resources */,
+				B0D87AFCE1B6C748D82381F9 /* [CP] Embed Pods Frameworks */,
+				2AE7B58EC2555E52969424DD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LuaServiceTests;
+			productName = LuaServiceTests;
+			productReference = D9A2670A1DC68B0C003616CF /* LuaServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D9A4952E1DBD91AC009986B3 /* ChatSecure */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9A495461DBD91AC009986B3 /* Build configuration list for PBXNativeTarget "ChatSecure" */;
@@ -343,6 +503,7 @@
 			dependencies = (
 				D9A4954E1DBD91F6009986B3 /* PBXTargetDependency */,
 				D9A495511DBD91F6009986B3 /* PBXTargetDependency */,
+				D9A266FC1DC57F71003616CF /* PBXTargetDependency */,
 			);
 			name = ChatSecure;
 			productName = ChatSecure;
@@ -377,8 +538,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OTR;
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Christopher Ballinger";
 				TargetAttributes = {
 					D93BAA6A1A1DAF050087F30E = {
@@ -400,6 +561,21 @@
 								enabled = 1;
 							};
 						};
+					};
+					D9A266F11DC57F71003616CF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 4T8JLQR6GR;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					D9A267091DC68B0C003616CF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 4T8JLQR6GR;
+						ProvisioningStyle = Automatic;
 					};
 					D9A4952E1DBD91AC009986B3 = {
 						CreatedOnToolsVersion = 8.0;
@@ -436,6 +612,8 @@
 				D93BAA7E1A1DAF110087F30E /* XMPPService */,
 				D9A4952E1DBD91AC009986B3 /* ChatSecure */,
 				D9A4953E1DBD91AC009986B3 /* ChatSecureTests */,
+				D9A266F11DC57F71003616CF /* LuaService */,
+				D9A267091DC68B0C003616CF /* LuaServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -452,6 +630,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A266F01DC57F71003616CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A267051DC68A7A003616CF /* prosody in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A267081DC68B0C003616CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A267151DC68DFE003616CF /* prosody in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +683,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1D239B6D82E68FD842B4FA88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2AE7B58EC2555E52969424DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuaService-LuaServiceTests/Pods-LuaService-LuaServiceTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		379940A6C139970EBC36C07B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		633C787319B78110310ADE29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -519,6 +758,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		87F7EDC98A0E6F3579BC70C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuaService/Pods-LuaService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A95DA2DB34FA9531D0E827FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -532,6 +786,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0D87AFCE1B6C748D82381F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuaService-LuaServiceTests/Pods-LuaService-LuaServiceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D07B20E26D74EE1A0161E6AB /* [CP] Check Pods Manifest.lock */ = {
@@ -615,6 +884,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9A266EE1DC57F71003616CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A266F91DC57F71003616CF /* main.m in Sources */,
+				D9A266F71DC57F71003616CF /* LuaService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A267061DC68B0C003616CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A267131DC68C13003616CF /* LuaService.h in Sources */,
+				D9A267141DC68C13003616CF /* LuaService.m in Sources */,
+				D9A267171DC693BF003616CF /* LuaServiceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9A4952B1DBD91AC009986B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,6 +911,7 @@
 				D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */,
 				D9A495531DBD928B009986B3 /* OTRSecrets.m in Sources */,
 				D9D2C1A11DBDA47F00962A25 /* MessagesViewController.swift in Sources */,
+				D9A267021DC58950003616CF /* LuaServiceManager.swift in Sources */,
 				D9A495321DBD91AC009986B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,6 +927,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D9A266FC1DC57F71003616CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9A266F11DC57F71003616CF /* LuaService */;
+			targetProxy = D9A266FB1DC57F71003616CF /* PBXContainerItemProxy */;
+		};
 		D9A495411DBD91AC009986B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D9A4952E1DBD91AC009986B3 /* ChatSecure */;
@@ -746,6 +1040,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -815,6 +1110,100 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D9A266FE1DC57F71003616CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 981306B139111A420D018B72 /* Pods-LuaService.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = LuaService/LuaService.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4T8JLQR6GR;
+				INFOPLIST_FILE = LuaService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks' '@executable_path/../../../../Frameworks'";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LuaService/vendor",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.LuaService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D9A266FF1DC57F71003616CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D454512ADB21FD64FF9D35 /* Pods-LuaService.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = LuaService/LuaService.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 4T8JLQR6GR;
+				INFOPLIST_FILE = LuaService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks' '@executable_path/../../../../Frameworks'";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LuaService/vendor",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.LuaService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D9A267101DC68B0C003616CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 315FD5A608AB07E6ADECE6C3 /* Pods-LuaService-LuaServiceTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4T8JLQR6GR;
+				INFOPLIST_FILE = LuaServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.LuaServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "LuaServiceTests/LuaServiceTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D9A267111DC68B0C003616CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 462632EA88EDDFFA71EAFF2F /* Pods-LuaService-LuaServiceTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 4T8JLQR6GR;
+				INFOPLIST_FILE = LuaServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.LuaServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LuaServiceTests/LuaServiceTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -936,6 +1325,24 @@
 			buildConfigurations = (
 				D93BAA8D1A1DAF110087F30E /* Debug */,
 				D93BAA8E1A1DAF110087F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9A267001DC57F71003616CF /* Build configuration list for PBXNativeTarget "LuaService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9A266FE1DC57F71003616CF /* Debug */,
+				D9A266FF1DC57F71003616CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9A2670F1DC68B0C003616CF /* Build configuration list for PBXNativeTarget "LuaServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9A267101DC68B0C003616CF /* Debug */,
+				D9A267111DC68B0C003616CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

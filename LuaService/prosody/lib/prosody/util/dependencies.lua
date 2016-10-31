@@ -8,7 +8,15 @@
 
 module("dependencies", package.seeall)
 
-function softreq(...) local ok, lib =  pcall(require, ...); if ok then return lib; else return nil, lib; end end
+function softreq(...)
+	local status, err =  pcall(require, ...);
+	print("softreq: ", status, err, ...);
+	if status then
+		return err;
+	else 
+		return nil, err; 
+	end 
+end
 
 -- Required to be able to find packages installed with luarocks
 if not softreq "luarocks.loader" then -- LuaRocks 2.x
@@ -60,7 +68,10 @@ function check_dependencies()
 	local fatal;
 	
 	local lxp = softreq "lxp"
-	
+
+    print("path: ", package.path)
+    print("cpath: ", package.cpath)
+
 	if not lxp then
 		missingdep("luaexpat", {
 				["Debian/Ubuntu"] = "sudo apt-get install liblua5.1-expat0";

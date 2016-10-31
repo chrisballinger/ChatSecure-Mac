@@ -13,6 +13,7 @@ PODS:
   - KissXML (5.1.2):
     - KissXML/Core (= 5.1.2)
   - KissXML/Core (5.1.2)
+  - lua51 (5.1.5)
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
@@ -247,6 +248,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaAsyncSocket (from `https://github.com/robbiehanson/CocoaAsyncSocket.git`, commit `f3cf8a6fb27de57bd70b40cf4173d695d4a17b22`)
+  - lua51 (from `Podspecs/lua51.podspec.json`)
   - Mantle (~> 2.1)
   - PureLayout (~> 3.0)
   - XMPPFramework (from `Submodules/XMPPFramework/XMPPFramework.podspec`)
@@ -256,6 +258,8 @@ EXTERNAL SOURCES:
   CocoaAsyncSocket:
     :commit: f3cf8a6fb27de57bd70b40cf4173d695d4a17b22
     :git: https://github.com/robbiehanson/CocoaAsyncSocket.git
+  lua51:
+    :podspec: Podspecs/lua51.podspec.json
   XMPPFramework:
     :path: Submodules/XMPPFramework/XMPPFramework.podspec
 
@@ -268,6 +272,7 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
   CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
   KissXML: 246c842586bb77110e04fb88e19376d96245c856
+  lua51: e7500086559e79b3bd1473d93230ccb0e49d90ad
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   ProxyKit: 1f35adc913debc7ca6748c02487361dabaaea532
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
@@ -276,6 +281,6 @@ SPEC CHECKSUMS:
   XMPPFramework: 96396d09d681b470db3ebc464be4b5bd725d5644
   YapDatabase: b1e43555a34a5298e23a045be96817a5ef0da58f
 
-PODFILE CHECKSUM: e629660416586af1082440c0308872bd32c73109
+PODFILE CHECKSUM: b742a470e840aa79269dc9693d853643f15f5249
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.1

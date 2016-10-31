@@ -11,13 +11,20 @@
 
 -- Will be modified by configure script if run --
 
-package.path=[[/usr/local/Cellar/prosody/0.9.10/libexec/share/lua/5.1/?.lua;/usr/local/Cellar/prosody/0.9.10/libexec/share/lua/5.1/?/init.lua]];
-package.cpath=[[/usr/local/Cellar/prosody/0.9.10/libexec/lib/lua/5.1/?.so]];
 
-CFG_SOURCEDIR='/usr/local/Cellar/prosody/0.9.10/lib/prosody';
-CFG_CONFIGDIR='/usr/local/etc/prosody';
-CFG_PLUGINDIR='/usr/local/Cellar/prosody/0.9.10/lib/prosody/modules/';
-CFG_DATADIR='/usr/local/var/lib/prosody';
+-- Replace this at runtime with absolute path --
+if not CONTAINER_DIR then
+	CONTAINER_DIR="..";
+end
+print("container: ", CONTAINER_DIR);
+
+package.path=string.format([[%s/libexec/share/lua/5.1/?.lua;%s/libexec/share/lua/5.1/?/init.lua]], CONTAINER_DIR, CONTAINER_DIR);
+package.cpath=string.format([[%s/libexec/lib/lua/5.1/?.so]], CONTAINER_DIR);
+
+CFG_SOURCEDIR=string.format("%s/lib/prosody", CONTAINER_DIR);
+CFG_CONFIGDIR=string.format("%s/etc/prosody", CONTAINER_DIR);
+CFG_PLUGINDIR=string.format("%s/lib/prosody/modules/", CONTAINER_DIR);
+CFG_DATADIR=string.format("%s/var/lib/prosody", CONTAINER_DIR);
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
@@ -30,13 +37,17 @@ end
 -- Tell Lua where to find our libraries
 if CFG_SOURCEDIR then
 	local function filter_relative_paths(path)
-		if is_relative(path) then return ""; end
+		return path
+		-- Don't filter out relative paths for embedded version
+		-- if is_relative(path) then return ""; end
 	end
 	local function sanitise_paths(paths)
 		return (paths:gsub("[^;]+;?", filter_relative_paths):gsub(";;+", ";"));
 	end
 	package.path = sanitise_paths(CFG_SOURCEDIR.."/?.lua;"..package.path);
 	package.cpath = sanitise_paths(CFG_SOURCEDIR.."/?.so;"..package.cpath);
+	print("path: ", package.path)
+	print("cpath: ", package.cpath)
 end
 
 -- Substitute ~ with path to home directory in data path
@@ -65,12 +76,7 @@ function read_config()
 	local filenames = {};
 	
 	local filename;
-	if arg[1] == "--config" and arg[2] then
-		table.insert(filenames, arg[2]);
-		if CFG_CONFIGDIR then
-			table.insert(filenames, CFG_CONFIGDIR.."/"..arg[2]);
-		end
-	elseif os.getenv("PROSODY_CONFIG") then -- Passed by prosodyctl
+	if os.getenv("PROSODY_CONFIG") then -- Passed by prosodyctl
 			table.insert(filenames, os.getenv("PROSODY_CONFIG"));
 	else
 		for _, format in ipairs(config.parsers()) do

@@ -6,8 +6,4 @@
 //  Copyright © 2016 Christopher Ballinger. All rights reserved.
 //
 
-#ifndef LuaServiceTests_Bridging_Header_h
-#define LuaServiceTests_Bridging_Header_h
-
-
-#endif /* LuaServiceTests_Bridging_Header_h */
+#import "LuaService.h"

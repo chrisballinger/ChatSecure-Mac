@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93BAA7E1A1DAF110087F30E"
-               BuildableName = "XMPPService.xpc"
-               BlueprintName = "XMPPService"
+               BlueprintIdentifier = "D9A267091DC68B0C003616CF"
+               BuildableName = "LuaServiceTests.xctest"
+               BlueprintName = "LuaServiceTests"
                ReferencedContainer = "container:ChatSecure.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D9A267091DC68B0C003616CF"
+               BuildableName = "LuaServiceTests.xctest"
+               BlueprintName = "LuaServiceTests"
+               ReferencedContainer = "container:ChatSecure.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D9A267091DC68B0C003616CF"
+            BuildableName = "LuaServiceTests.xctest"
+            BlueprintName = "LuaServiceTests"
+            ReferencedContainer = "container:ChatSecure.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93BAA7E1A1DAF110087F30E"
-            BuildableName = "XMPPService.xpc"
-            BlueprintName = "XMPPService"
+            BlueprintIdentifier = "D9A267091DC68B0C003616CF"
+            BuildableName = "LuaServiceTests.xctest"
+            BlueprintName = "LuaServiceTests"
             ReferencedContainer = "container:ChatSecure.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,15 +79,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93BAA7E1A1DAF110087F30E"
-            BuildableName = "XMPPService.xpc"
-            BlueprintName = "XMPPService"
-            ReferencedContainer = "container:ChatSecure.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

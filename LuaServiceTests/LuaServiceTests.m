@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "LuaService.h"
 
 @interface LuaServiceTests : XCTestCase
 
@@ -24,16 +25,25 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)testProsody {
+    XCTestExpectation *exp = [self expectationWithDescription:@"prosody"];
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+    LuaService *service = [[LuaService alloc] init];
+    [service runScript:@"" completion:^(NSString * _Nonnull result, NSError * _Nullable error) {
+        NSLog(@"Finished: %@", result);
+        XCTAssertNil(error);
+        if (error) {
+            NSLog(@"error: %@", error);
+        }
+        [exp fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error: %@", error);
+        }
     }];
 }
+
 
 @end

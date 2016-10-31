@@ -39,6 +39,45 @@ Open `ChatSecure.xcworkspace` in Xcode and build.
 
 If you're still having trouble compiling check out the Travis-CI build status and `.travis.yml` file.
 
+## LuaService / Prosody
+
+Install Prosody via Homebrew tap and then modify installed package to support running within XPC sandbox.  
+
+* `brew tap prosody/prosody`
+* `brew install prosody`
+* Copy `/usr/local/opt/prosody` to `prosody` directory within `LuaService` directory.
+* Edit `prosody` file to support passing in container path via Lua C API.
+
+```lua
+-- Replace this at runtime with absolute path --
+if not CONTAINER_DIR then
+	CONTAINER_DIR="..";
+end
+print("container: ", CONTAINER_DIR);
+
+package.path=string.format([[%s/libexec/share/lua/5.1/?.lua;%s/libexec/share/lua/5.1/?/init.lua]], CONTAINER_DIR, CONTAINER_DIR);
+package.cpath=string.format([[%s/libexec/lib/lua/5.1/?.so]], CONTAINER_DIR);
+
+CFG_SOURCEDIR=string.format("%s/lib/prosody", CONTAINER_DIR);
+CFG_CONFIGDIR=string.format("%s/etc/prosody", CONTAINER_DIR);
+CFG_PLUGINDIR=string.format("%s/lib/prosody/modules/", CONTAINER_DIR);
+CFG_DATADIR=string.format("%s/var/lib/prosody", CONTAINER_DIR);
+```
+
+* Copy Homebrew dylib dependencies to `vendor` directory and modify to support loading bundled dylibs within sandbox.
+
+```bash
+cp /usr/local/opt/libidn/lib/libidn.11.dylib LuaService/vendor
+cp /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib LuaService/vendor
+cp /usr/local/opt/openssl/lib/libssl.1.0.0.dylib LuaService/vendor
+cp /usr/local/opt/expat/lib/libexpat.1.dylib LuaService/vendor
+
+```
+
+* `otool -L library.so` to print linked libraries
+* `install_name_tool` Changing dylib loading paths http://stackoverflow.com/a/1937331/805882
+
+
 ## TODO
 
 * Add OS X support to CPAProxy build scripts and podspec

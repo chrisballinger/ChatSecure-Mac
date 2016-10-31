@@ -23,6 +23,18 @@ class MessagesViewController: NSViewController {
         let messageText = messageTextField.stringValue
         NSLog("Send: %@", messageText)
         messageTextField.stringValue = ""
+        
+        if let appDelegate = NSApplication.shared().delegate as? AppDelegate {
+            appDelegate.luaServiceManager.runProsody(completion: { (result: String, error: Error?) -> (Void) in
+                if error == nil {
+                    appDelegate.xmppServiceManager.connect(withJID: kXMPPTestAccountJID, password: kXMPPTestAccountPassword)
+                }
+
+            })
+
+        }
+        
+
     }
     
 }

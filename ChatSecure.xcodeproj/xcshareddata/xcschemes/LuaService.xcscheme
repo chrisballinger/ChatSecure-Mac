@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93BAA7E1A1DAF110087F30E"
-               BuildableName = "XMPPService.xpc"
-               BlueprintName = "XMPPService"
+               BlueprintIdentifier = "D9A266F11DC57F71003616CF"
+               BuildableName = "LuaService.xpc"
+               BlueprintName = "LuaService"
                ReferencedContainer = "container:ChatSecure.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93BAA7E1A1DAF110087F30E"
-            BuildableName = "XMPPService.xpc"
-            BlueprintName = "XMPPService"
+            BlueprintIdentifier = "D9A266F11DC57F71003616CF"
+            BuildableName = "LuaService.xpc"
+            BlueprintName = "LuaService"
             ReferencedContainer = "container:ChatSecure.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93BAA7E1A1DAF110087F30E"
-            BuildableName = "XMPPService.xpc"
-            BlueprintName = "XMPPService"
+            BlueprintIdentifier = "D9A266F11DC57F71003616CF"
+            BuildableName = "LuaService.xpc"
+            BlueprintName = "LuaService"
             ReferencedContainer = "container:ChatSecure.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

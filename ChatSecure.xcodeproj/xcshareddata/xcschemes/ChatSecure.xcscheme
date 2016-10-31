@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93BAA171A1DA73B0087F30E"
+               BlueprintIdentifier = "D9A4952E1DBD91AC009986B3"
                BuildableName = "ChatSecure.app"
                BlueprintName = "ChatSecure"
                ReferencedContainer = "container:ChatSecure.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93BAA2A1A1DA73B0087F30E"
+               BlueprintIdentifier = "D9A4953E1DBD91AC009986B3"
                BuildableName = "ChatSecureTests.xctest"
                BlueprintName = "ChatSecureTests"
                ReferencedContainer = "container:ChatSecure.xcodeproj">
@@ -37,16 +37,16 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D93BAA2A1A1DA73B0087F30E"
+               BlueprintIdentifier = "D9A4953E1DBD91AC009986B3"
                BuildableName = "ChatSecureTests.xctest"
                BlueprintName = "ChatSecureTests"
                ReferencedContainer = "container:ChatSecure.xcodeproj">
@@ -56,26 +56,30 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93BAA171A1DA73B0087F30E"
+            BlueprintIdentifier = "D9A4952E1DBD91AC009986B3"
             BuildableName = "ChatSecure.app"
             BlueprintName = "ChatSecure"
             ReferencedContainer = "container:ChatSecure.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93BAA171A1DA73B0087F30E"
+            BlueprintIdentifier = "D9A4952E1DBD91AC009986B3"
             BuildableName = "ChatSecure.app"
             BlueprintName = "ChatSecure"
             ReferencedContainer = "container:ChatSecure.xcodeproj">
@@ -85,15 +89,16 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D93BAA171A1DA73B0087F30E"
+            BlueprintIdentifier = "D9A4952E1DBD91AC009986B3"
             BuildableName = "ChatSecure.app"
             BlueprintName = "ChatSecure"
             ReferencedContainer = "container:ChatSecure.xcodeproj">

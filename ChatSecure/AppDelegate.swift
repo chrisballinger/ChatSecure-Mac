@@ -12,13 +12,13 @@ import CocoaLumberjack
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let serviceManager = XMPPServiceManager()
+    let xmppServiceManager = XMPPServiceManager()
+    let luaServiceManager = LuaServiceManager()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         DDLog.add(DDTTYLogger.sharedInstance())
         DDLog.add(DDASLLogger.sharedInstance())
-        serviceManager.connect(withJID: kXMPPTestAccountJID, password: kXMPPTestAccountPassword)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
