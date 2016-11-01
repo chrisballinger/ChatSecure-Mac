@@ -37,14 +37,16 @@ class MessagesViewController: NSViewController {
                     return
                 }
                 NSLog("SOCKS: %@:%d @ %@", socksHost, socksPort, onion)
+                
+                appDelegate.luaServiceManager.runProsody(completion: { (result: String, error: Error?) -> (Void) in
+                    if error == nil {
+                        //appDelegate.xmppServiceManager.connect(withJID: kXMPPTestAccountJID, password: kXMPPTestAccountPassword)
+                    }
+                    
+                })
             })
             
-//            appDelegate.luaServiceManager.runProsody(completion: { (result: String, error: Error?) -> (Void) in
-//                if error == nil {
-//                    appDelegate.xmppServiceManager.connect(withJID: kXMPPTestAccountJID, password: kXMPPTestAccountPassword)
-//                }
-//
-//            })
+            
 
         }
         

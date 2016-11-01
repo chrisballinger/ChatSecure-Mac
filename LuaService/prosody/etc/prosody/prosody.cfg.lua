@@ -70,6 +70,8 @@ modules_enabled = {
 		--"watchregistrations"; -- Alert admins of registrations
 		--"motd"; -- Send a message to users when they log in
 		--"legacyauth"; -- Legacy authentication. Only used by some old clients and bots.
+
+	"onions";
 };
 
 -- These modules are auto-loaded, but should you want
@@ -82,7 +84,7 @@ modules_disabled = {
 
 -- Disable account creation by default, for security
 -- For more information see http://prosody.im/doc/creating_accounts
-allow_registration = false;
+allow_registration = true;
 
 -- These are the SSL/TLS-related settings. If you don't want
 -- to use SSL/TLS, you may comment or remove this
@@ -151,8 +153,10 @@ daemonize=false
 -- You need to add a VirtualHost entry for each domain you wish Prosody to serve.
 -- Settings under each VirtualHost entry apply *only* to that host.
 
-VirtualHost "localhost"
--- VirtualHost "xmpp.ballinger.io"
+-- VirtualHost "localhost"
+-- VirtualHost "<<ONION_ADDRESS>>" 
+VirtualHost "fzyf3lterhtnwysp.onion"
+modules_enabled = { "onions" };
 
 ------ Components ------
 -- You can specify components to add hosts that provide special services,

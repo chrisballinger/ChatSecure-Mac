@@ -54,7 +54,8 @@
     NSURL *docs = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSString *hsDir = [[docs URLByAppendingPathComponent:serviceDirectoryName] path];
     TorOnionServicePort *portMapping = [[TorOnionServicePort alloc] initWithAddress:@"127.0.0.1" externalPort:externalPort internalPort:internalPort];
-    TorOnionService *onionService = [[TorOnionService alloc] initWithServiceDirectory:hsDir portMappings:@[portMapping]];
+    TorOnionServicePort *xmppC2S = [[TorOnionServicePort alloc] initWithAddress:@"127.0.0.1" externalPort:5222 internalPort:5222];
+    TorOnionService *onionService = [[TorOnionService alloc] initWithServiceDirectory:hsDir portMappings:@[portMapping, xmppC2S]];
     
     NSMutableString *torrcString = [[NSMutableString alloc] initWithContentsOfFile:torrcPath encoding:NSUTF8StringEncoding error:&error];
     [torrcString appendString:@"\n\n"];
@@ -69,6 +70,7 @@
     
     // Initialize a CPAProxyManager
     CPAConfiguration *configuration = [CPAConfiguration configurationWithTorrcPath:newTorrcPath geoipPath:geoipPath torDataDirectoryPath:dataDirectory];
+    configuration.useDefaultSocksPort = YES;
     configuration.isolateDestinationAddress = YES;
     configuration.isolateDestinationPort = YES;
     _torManager = [CPAProxyManager proxyWithConfiguration:configuration];
