@@ -25,13 +25,18 @@ class MessagesViewController: NSViewController {
         messageTextField.stringValue = ""
         
         if let appDelegate = NSApplication.shared().delegate as? AppDelegate {
-            appDelegate.torServiceManager.setup(completion: { (socksHost: String?, socksPort: UInt, error: Error?) -> (Void) in
-                if let s = socksHost {
-                    NSLog("SOCKS: %@ : %d", s, socksPort)
-                }
+            appDelegate.torServiceManager.setup(completion: { (socksHost: String?, socksPort: UInt, onionService: String?, error: Error?) -> (Void) in
                 if let error = error as? NSError {
                     NSLog("Tor setup error: %@", error)
+                    return
                 }
+                guard let socksHost = socksHost else {
+                    return
+                }
+                guard let onion = onionService else {
+                    return
+                }
+                NSLog("SOCKS: %@:%d @ %@", socksHost, socksPort, onion)
             })
             
 //            appDelegate.luaServiceManager.runProsody(completion: { (result: String, error: Error?) -> (Void) in

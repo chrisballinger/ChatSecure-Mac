@@ -12,6 +12,8 @@ public class TorServiceManager: NSObject {
     private let connection = NSXPCConnection(serviceName: "com.chrisballinger.TorService")
     private let torService: TorServiceProtocol
     
+    private let xmppServerPort: UInt16 = 5269
+    
     deinit {
         connection.invalidate()
     }
@@ -25,7 +27,7 @@ public class TorServiceManager: NSObject {
         }) as! TorServiceProtocol
     }
     
-    public func setup(completion: @escaping (String?, UInt, Error?) -> (Void)) {
-        torService.setup(completion: completion)
+    public func setup(completion: @escaping (String?, UInt, String?, Error?) -> (Void)) {
+        torService.setup(completion: completion, internalPort: xmppServerPort, externalPort: xmppServerPort, serviceDirectoryName: "prosody")
     }
 }

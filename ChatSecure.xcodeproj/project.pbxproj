@@ -38,6 +38,7 @@
 		D9A4954F1DBD91F6009986B3 /* XMPPService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = D93BAA7F1A1DAF110087F30E /* XMPPService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D9A495531DBD928B009986B3 /* OTRSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA71611A248D850005895A /* OTRSecrets.m */; };
 		D9A495541DBD9291009986B3 /* XMPPServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA715D1A2480420005895A /* XMPPServiceManager.m */; };
+		D9B6B6CB1DC85DC400BD3DE2 /* TorOnionService.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B6B6CA1DC85DC400BD3DE2 /* TorOnionService.m */; };
 		D9D2C1A11DBDA47F00962A25 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */; };
 		D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */; };
 		D9ECB7F31DC843C5001B0431 /* TorServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECB7F21DC843C5001B0431 /* TorServiceManager.swift */; };
@@ -165,6 +166,9 @@
 		D9AA715D1A2480420005895A /* XMPPServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPServiceManager.m; sourceTree = "<group>"; };
 		D9AA71601A248D850005895A /* OTRSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRSecrets.h; sourceTree = "<group>"; };
 		D9AA71611A248D850005895A /* OTRSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRSecrets.m; sourceTree = "<group>"; };
+		D9B6B6C61DC859B600BD3DE2 /* TorService-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TorService-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9B6B6C91DC85DC400BD3DE2 /* TorOnionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorOnionService.h; sourceTree = "<group>"; };
+		D9B6B6CA1DC85DC400BD3DE2 /* TorOnionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TorOnionService.m; sourceTree = "<group>"; };
 		D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		D9ECB7F21DC843C5001B0431 /* TorServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorServiceManager.swift; sourceTree = "<group>"; };
@@ -322,10 +326,13 @@
 			children = (
 				D93BAA8F1A1DAF170087F30E /* TorService.entitlements */,
 				D93BAA6F1A1DAF050087F30E /* TorServiceProtocol.h */,
+				D9B6B6C91DC85DC400BD3DE2 /* TorOnionService.h */,
+				D9B6B6CA1DC85DC400BD3DE2 /* TorOnionService.m */,
 				D93BAA701A1DAF050087F30E /* TorService.h */,
 				D93BAA711A1DAF050087F30E /* TorService.m */,
 				D93BAA731A1DAF050087F30E /* main.m */,
 				D93BAA6D1A1DAF050087F30E /* Supporting Files */,
+				D9B6B6C61DC859B600BD3DE2 /* TorService-Bridging-Header.h */,
 			);
 			path = TorService;
 			sourceTree = "<group>";
@@ -558,6 +565,7 @@
 					D93BAA6A1A1DAF050087F30E = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 4T8JLQR6GR;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -914,6 +922,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93BAA741A1DAF050087F30E /* main.m in Sources */,
+				D9B6B6CB1DC85DC400BD3DE2 /* TorOnionService.m in Sources */,
 				D93BAA721A1DAF050087F30E /* TorService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1093,6 +1102,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E514A343EAB40AB4EC6F76C4 /* Pods-TorService.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorService/TorService.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1106,6 +1116,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TorService/TorService-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1113,6 +1126,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97ECDA54B457F2B21EB56E96 /* Pods-TorService.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorService/TorService.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1122,6 +1136,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TorService/TorService-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
