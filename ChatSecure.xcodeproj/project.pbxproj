@@ -11,6 +11,7 @@
 		2266CD74B5038C93A8F9D38A /* Pods_ChatSecurePods_ChatSecure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */; };
 		3ADCEDE3C4F6424088C466F5 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE29B75FBC11CEEDA632AE1 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework */; };
 		9F8BE290ACDEAA50BAD76427 /* Pods_ChatSecurePods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D86B0669B14DA4230A9402 /* Pods_ChatSecurePods_LuaService.framework */; };
+		B9A4EFB73BBF37C468224C16 /* Pods_TorService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5A9457B4735C593DADB0A8 /* Pods_TorService.framework */; };
 		B9E3A90C96FBFF1FA8DF8C18 /* Pods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */; };
 		D93BAA721A1DAF050087F30E /* TorService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA711A1DAF050087F30E /* TorService.m */; };
 		D93BAA741A1DAF050087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA731A1DAF050087F30E /* main.m */; };
@@ -39,6 +40,7 @@
 		D9A495541DBD9291009986B3 /* XMPPServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AA715D1A2480420005895A /* XMPPServiceManager.m */; };
 		D9D2C1A11DBDA47F00962A25 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */; };
 		D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */; };
+		D9ECB7F31DC843C5001B0431 /* TorServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECB7F21DC843C5001B0431 /* TorServiceManager.swift */; };
 		E2D7252B7294BB4C1F6C75C1 /* Pods_ChatSecurePods_XMPPService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */; };
 		F60CAB2FCFF9DAF43BD5E129 /* Pods_LuaService_LuaServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85FEF3C3703E2628B8B229C /* Pods_LuaService_LuaServiceTests.framework */; };
 /* End PBXBuildFile section */
@@ -97,12 +99,14 @@
 		376521A125D4A8D4118C6C30 /* Pods-ChatSecurePods-XMPPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-XMPPService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService.release.xcconfig"; sourceTree = "<group>"; };
 		462632EA88EDDFFA71EAFF2F /* Pods-LuaService-LuaServiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuaService-LuaServiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuaService-LuaServiceTests/Pods-LuaService-LuaServiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		49F060863355A360CCD5A481 /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4D5A9457B4735C593DADB0A8 /* Pods_TorService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_ChatSecure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61066028B3B0DA5914DF94BF /* Pods-ChatSecurePods-ChatSecure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure.release.xcconfig"; sourceTree = "<group>"; };
 		64D86B0669B14DA4230A9402 /* Pods_ChatSecurePods_LuaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_LuaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE9BAB15F95963476F174D0 /* Pods-ChatSecurePods-ChatSecure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure.debug.xcconfig"; sourceTree = "<group>"; };
 		966112E0EEB33C595D811C8C /* Pods-ChatSecurePods-XMPPService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-XMPPService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-XMPPService/Pods-ChatSecurePods-XMPPService.debug.xcconfig"; sourceTree = "<group>"; };
+		97ECDA54B457F2B21EB56E96 /* Pods-TorService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorService.release.xcconfig"; path = "Pods/Target Support Files/Pods-TorService/Pods-TorService.release.xcconfig"; sourceTree = "<group>"; };
 		981306B139111A420D018B72 /* Pods-LuaService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuaService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuaService/Pods-LuaService.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_XMPPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85FEF3C3703E2628B8B229C /* Pods_LuaService_LuaServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuaService_LuaServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +167,8 @@
 		D9AA71611A248D850005895A /* OTRSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRSecrets.m; sourceTree = "<group>"; };
 		D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		D9ECB7F21DC843C5001B0431 /* TorServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorServiceManager.swift; sourceTree = "<group>"; };
+		E514A343EAB40AB4EC6F76C4 /* Pods-TorService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TorService/Pods-TorService.debug.xcconfig"; sourceTree = "<group>"; };
 		E948395995B61BD764B6BED2 /* Pods-ChatSecurePods-LuaService-LuaServiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-LuaService-LuaServiceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-LuaService-LuaServiceTests/Pods-ChatSecurePods-LuaService-LuaServiceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECE29B75FBC11CEEDA632AE1 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSecurePods_LuaService_LuaServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9A4EFB73BBF37C468224C16 /* Pods_TorService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +246,7 @@
 				ECE29B75FBC11CEEDA632AE1 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework */,
 				573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */,
 				A85FEF3C3703E2628B8B229C /* Pods_LuaService_LuaServiceTests.framework */,
+				4D5A9457B4735C593DADB0A8 /* Pods_TorService.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,6 +268,8 @@
 				C6D454512ADB21FD64FF9D35 /* Pods-LuaService.release.xcconfig */,
 				315FD5A608AB07E6ADECE6C3 /* Pods-LuaService-LuaServiceTests.debug.xcconfig */,
 				462632EA88EDDFFA71EAFF2F /* Pods-LuaService-LuaServiceTests.release.xcconfig */,
+				E514A343EAB40AB4EC6F76C4 /* Pods-TorService.debug.xcconfig */,
+				97ECDA54B457F2B21EB56E96 /* Pods-TorService.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -402,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				D9A267011DC58950003616CF /* LuaServiceManager.swift */,
+				D9ECB7F21DC843C5001B0431 /* TorServiceManager.swift */,
 				D9AA715C1A2480420005895A /* XMPPServiceManager.h */,
 				D9AA715D1A2480420005895A /* XMPPServiceManager.m */,
 			);
@@ -415,9 +426,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D93BAA781A1DAF050087F30E /* Build configuration list for PBXNativeTarget "TorService" */;
 			buildPhases = (
+				A5DD3ED0882115A4C3E083D6 /* [CP] Check Pods Manifest.lock */,
 				D93BAA671A1DAF050087F30E /* Sources */,
 				D93BAA681A1DAF050087F30E /* Frameworks */,
 				D93BAA691A1DAF050087F30E /* Resources */,
+				81166135ECAD9ECE7EBA0545 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -758,6 +771,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure/Pods-ChatSecurePods-ChatSecure-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		81166135ECAD9ECE7EBA0545 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TorService/Pods-TorService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		87F7EDC98A0E6F3579BC70C3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -771,6 +799,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuaService/Pods-LuaService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5DD3ED0882115A4C3E083D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A95DA2DB34FA9531D0E827FD /* [CP] Embed Pods Frameworks */ = {
@@ -907,6 +950,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9ECB7F31DC843C5001B0431 /* TorServiceManager.swift in Sources */,
 				D9A495541DBD9291009986B3 /* XMPPServiceManager.m in Sources */,
 				D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */,
 				D9A495531DBD928B009986B3 /* OTRSecrets.m in Sources */,
@@ -1047,6 +1091,7 @@
 		};
 		D93BAA791A1DAF050087F30E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E514A343EAB40AB4EC6F76C4 /* Pods-TorService.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TorService/TorService.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1057,6 +1102,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = TorService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks' '@executable_path/../../../../Frameworks'";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1065,12 +1111,14 @@
 		};
 		D93BAA7A1A1DAF050087F30E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97ECDA54B457F2B21EB56E96 /* Pods-TorService.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TorService/TorService.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4T8JLQR6GR;
 				INFOPLIST_FILE = TorService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks' '@executable_path/../../../../Frameworks'";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisballinger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

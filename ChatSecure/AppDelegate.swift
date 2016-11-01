@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     let xmppServiceManager = XMPPServiceManager()
     let luaServiceManager = LuaServiceManager()
+    let torServiceManager = TorServiceManager()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application

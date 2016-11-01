@@ -9,3 +9,4 @@
 #import "OTRSecrets.h"
 #import "XMPPServiceManager.h"
 #import "LuaServiceProtocol.h"
+#import "TorServiceProtocol.h"

@@ -20,3 +20,7 @@ target 'LuaService' do
 	pod 'lua51', :podspec => 'Podspecs/lua51.podspec.json'
 	target 'LuaServiceTests'
 end
+
+target 'TorService' do
+	pod 'CPAProxy', :path => 'Submodules/CPAProxy/CPAProxy.podspec'
+end

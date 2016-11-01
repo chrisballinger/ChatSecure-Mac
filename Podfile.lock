@@ -10,6 +10,8 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.4.0):
     - CocoaLumberjack/Default
+  - CPAProxy (1.2.0):
+    - CocoaAsyncSocket
   - KissXML (5.1.2):
     - KissXML/Core (= 5.1.2)
   - KissXML/Core (5.1.2)
@@ -248,6 +250,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaAsyncSocket (from `https://github.com/robbiehanson/CocoaAsyncSocket.git`, commit `f3cf8a6fb27de57bd70b40cf4173d695d4a17b22`)
+  - CPAProxy (from `Submodules/CPAProxy/CPAProxy.podspec`)
   - lua51 (from `Podspecs/lua51.podspec.json`)
   - Mantle (~> 2.1)
   - PureLayout (~> 3.0)
@@ -258,6 +261,8 @@ EXTERNAL SOURCES:
   CocoaAsyncSocket:
     :commit: f3cf8a6fb27de57bd70b40cf4173d695d4a17b22
     :git: https://github.com/robbiehanson/CocoaAsyncSocket.git
+  CPAProxy:
+    :path: Submodules/CPAProxy/CPAProxy.podspec
   lua51:
     :podspec: Podspecs/lua51.podspec.json
   XMPPFramework:
@@ -271,6 +276,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
   CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  CPAProxy: 6d70ee01f5b4912bdbecbb1b69720ca6e1964617
   KissXML: 246c842586bb77110e04fb88e19376d96245c856
   lua51: e7500086559e79b3bd1473d93230ccb0e49d90ad
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
@@ -281,6 +287,6 @@ SPEC CHECKSUMS:
   XMPPFramework: 96396d09d681b470db3ebc464be4b5bd725d5644
   YapDatabase: b1e43555a34a5298e23a045be96817a5ef0da58f
 
-PODFILE CHECKSUM: b742a470e840aa79269dc9693d853643f15f5249
+PODFILE CHECKSUM: e7a031249ce69ceddd172bad3730fdf3e311363e
 
 COCOAPODS: 1.2.0.beta.1
