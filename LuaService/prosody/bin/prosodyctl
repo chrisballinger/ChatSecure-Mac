@@ -11,13 +11,21 @@
 
 -- Will be modified by configure script if run --
 
-package.path=[[/usr/local/Cellar/prosody/0.9.10/libexec/share/lua/5.1/?.lua;/usr/local/Cellar/prosody/0.9.10/libexec/share/lua/5.1/?/init.lua]];
-package.cpath=[[/usr/local/Cellar/prosody/0.9.10/libexec/lib/lua/5.1/?.so]];
+-- Replace this at runtime with absolute path --
+if not CONTAINER_DIR then
+	CONTAINER_DIR="..";
+end
+print("container: ", CONTAINER_DIR);
 
-CFG_SOURCEDIR='/usr/local/Cellar/prosody/0.9.10/lib/prosody';
-CFG_CONFIGDIR='/usr/local/etc/prosody';
-CFG_PLUGINDIR='/usr/local/Cellar/prosody/0.9.10/lib/prosody/modules/';
-CFG_DATADIR='/usr/local/var/lib/prosody';
+package.path=string.format([[%s/libexec/share/lua/5.1/?.lua;%s/libexec/share/lua/5.1/?/init.lua]], CONTAINER_DIR, CONTAINER_DIR);
+package.cpath=string.format([[%s/libexec/lib/lua/5.1/?.so]], CONTAINER_DIR);
+
+CFG_SOURCEDIR=string.format("%s/lib/prosody", CONTAINER_DIR);
+-- CFG_CONFIGDIR=string.format("%s/etc/prosody", CONTAINER_DIR); -- This will be replaced at runtime instead
+CFG_PLUGINDIR=string.format("%s/lib/prosody/modules/", CONTAINER_DIR);
+
+-- CFG_DATADIR=string.format("%s/var/lib/prosody", CONTAINER_DIR); -- This will be replaced at runtime instead
+print("data_dir: ", CFG_DATADIR);
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
@@ -60,7 +68,7 @@ _G.prosody = prosody;
 
 local dependencies = require "util.dependencies";
 if not dependencies.check_dependencies() then
-	os.exit(1);
+	-- os.exit(1);
 end
 
 config = require "core.configmanager"
@@ -110,7 +118,7 @@ do
 		print("Good luck!");
 		print("**************************");
 		print("");
-		os.exit(1);
+		-- os.exit(1);
 	end
 end
 local original_logging_config = config.get("*", "log");
@@ -173,7 +181,7 @@ else
 	print("Error: Unable to load pposix module. Check that Prosody is installed correctly.")
 	print("For more help send the below error to us through http://prosody.im/discuss");
 	print(tostring(pposix))
-	os.exit(1);
+	-- os.exit(1);
 end
 
 local function test_writeable(filename)
@@ -211,7 +219,7 @@ if #unwriteable_files > 0 then
 		print(err);
 	end
 	print("");
-	os.exit(1);
+	-- os.exit(1);
 end
 
 
@@ -364,8 +372,8 @@ function commands.deluser(arg)
 	end
 	local user, host = jid_split(arg[1]);
 	if not user and host then
-		show_message [[Failed to understand JID, please supply the JID you want to set the password for]]
-		show_usage [[passwd user@host]]
+		show_message [[Failed to understand JID, please supply the JID to the user account you want to delete]]
+		show_usage [[deluser user@host]]
 		return 1;
 	end
 	
@@ -693,7 +701,7 @@ function cert_commands.config(arg)
 		if not conf_file then
 			show_warning("Could not open OpenSSL config file for writing");
 			show_warning(err);
-			os.exit(1);
+			-- os.exit(1);
 		end
 		conf_file:write(conf:serialize());
 		conf_file:close();
@@ -793,7 +801,7 @@ if command and command:match("^mod_") then -- Is a command in a module
 	local ret, err = modulemanager.load("*", module_name);
 	if not ret then
 		show_message("Failed to load module '"..module_name.."': "..err);
-		os.exit(1);
+		-- os.exit(1);
 	end
 	
 	table.remove(arg, 1);
@@ -801,25 +809,25 @@ if command and command:match("^mod_") then -- Is a command in a module
 	local module = modulemanager.get_module("*", module_name);
 	if not module then
 		show_message("Failed to load module '"..module_name.."': Unknown error");
-		os.exit(1);
+		-- os.exit(1);
 	end
 	
 	if not modulemanager.module_has_method(module, "command") then
 		show_message("Fail: mod_"..module_name.." does not support any commands");
-		os.exit(1);
+		-- os.exit(1);
 	end
 	
 	local ok, ret = modulemanager.call_module_method(module, "command", arg);
 	if ok then
 		if type(ret) == "number" then
-			os.exit(ret);
+			-- os.exit(ret);
 		elseif type(ret) == "string" then
 			show_message(ret);
 		end
-		os.exit(0); -- :)
+		-- os.exit(0); -- :)
 	else
 		show_message("Failed to execute command: "..error_messages[ret]);
-		os.exit(1); -- :(
+		-- os.exit(1); -- :(
 	end
 end
 
@@ -858,7 +866,8 @@ if not commands[command] then -- Show help for all commands
 	end
 	
 	
-	os.exit(0);
+	-- os.exit(0);
 end
 
-os.exit(commands[command]({ select(2, unpack(arg)) }));
+commands[command]({ select(2, unpack(arg)) });
+-- os.exit(commands[command]({ select(2, unpack(arg)) }));

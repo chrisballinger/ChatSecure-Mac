@@ -11,7 +11,6 @@
 
 -- Will be modified by configure script if run --
 
-
 -- Replace this at runtime with absolute path --
 if not CONTAINER_DIR then
 	CONTAINER_DIR="..";
@@ -22,9 +21,11 @@ package.path=string.format([[%s/libexec/share/lua/5.1/?.lua;%s/libexec/share/lua
 package.cpath=string.format([[%s/libexec/lib/lua/5.1/?.so]], CONTAINER_DIR);
 
 CFG_SOURCEDIR=string.format("%s/lib/prosody", CONTAINER_DIR);
-CFG_CONFIGDIR=string.format("%s/etc/prosody", CONTAINER_DIR);
+-- CFG_CONFIGDIR=string.format("%s/etc/prosody", CONTAINER_DIR); -- This will be replaced at runtime instead
 CFG_PLUGINDIR=string.format("%s/lib/prosody/modules/", CONTAINER_DIR);
-CFG_DATADIR=string.format("%s/var/lib/prosody", CONTAINER_DIR);
+
+-- CFG_DATADIR=string.format("%s/var/lib/prosody", CONTAINER_DIR); -- This will be replaced at runtime instead
+print("data_dir: ", CFG_DATADIR);
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
@@ -37,17 +38,13 @@ end
 -- Tell Lua where to find our libraries
 if CFG_SOURCEDIR then
 	local function filter_relative_paths(path)
-		return path
-		-- Don't filter out relative paths for embedded version
-		-- if is_relative(path) then return ""; end
+		if is_relative(path) then return ""; end
 	end
 	local function sanitise_paths(paths)
 		return (paths:gsub("[^;]+;?", filter_relative_paths):gsub(";;+", ";"));
 	end
 	package.path = sanitise_paths(CFG_SOURCEDIR.."/?.lua;"..package.path);
 	package.cpath = sanitise_paths(CFG_SOURCEDIR.."/?.so;"..package.cpath);
-	print("path: ", package.path)
-	print("cpath: ", package.cpath)
 end
 
 -- Substitute ~ with path to home directory in data path

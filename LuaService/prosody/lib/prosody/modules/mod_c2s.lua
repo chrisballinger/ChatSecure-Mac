@@ -175,6 +175,9 @@ local function session_close(session, reason)
 			sm_destroy_session(session, reason);
 			conn:close();
 		end
+	else
+		local reason = (reason and (reason.name or reason.text or reason.condition)) or reason;
+		sm_destroy_session(session, reason);
 	end
 end
 
@@ -258,6 +261,7 @@ function listener.ondisconnect(conn, err)
 	if session then
 		(session.log or log)("info", "Client disconnected: %s", err or "connection closed");
 		sm_destroy_session(session, err);
+		session.conn = nil;
 		sessions[conn]  = nil;
 	end
 end

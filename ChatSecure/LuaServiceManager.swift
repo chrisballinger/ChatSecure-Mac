@@ -25,7 +25,11 @@ public class LuaServiceManager: NSObject {
         }) as! LuaServiceProtocol
     }
     
-    public func runProsody(completion: @escaping (String, Error?) -> (Void)) {
+    public func generateConfiguration(onionAddress: String, allowRegistration: Bool, completion: @escaping (_ success: Bool, _ error: Error?) -> (Void)) {
+        luaService.generateConfiguration(withOnionAddress: onionAddress, allowRegistration: allowRegistration, completion: completion)
+    }
+    
+    public func runProsody(completion: @escaping (_ success: Bool, _ error: Error?) -> (Void)) {
         luaService.runProsody(completion)
     }
 }

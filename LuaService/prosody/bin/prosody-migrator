@@ -1,6 +1,6 @@
 #!/usr/bin/env lua
 
-CFG_SOURCEDIR='/usr/local/Cellar/prosody/0.9.10/lib/prosody';
+CFG_SOURCEDIR='/usr/local/Cellar/prosody/0.9.11/lib/prosody';
 CFG_CONFIGDIR='/usr/local/etc/prosody';
 
 -- Substitute ~ with path to home directory in paths

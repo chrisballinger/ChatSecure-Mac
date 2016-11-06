@@ -52,7 +52,7 @@ dependencies = {
       }
    },
    luasec = {
-      ["0.5.1-1"] = {
+      ["0.6-1"] = {
          {
             constraints = {
                {
@@ -139,10 +139,10 @@ modules = {
       "luasocket/3.0rc1-2"
    },
    ssl = {
-      "luasec/0.5.1-1"
+      "luasec/0.6-1"
    },
    ["ssl.https"] = {
-      "luasec/0.5.1-1"
+      "luasec/0.6-1"
    }
 }
 repository = {
@@ -184,7 +184,7 @@ repository = {
       }
    },
    luasec = {
-      ["0.5.1-1"] = {
+      ["0.6-1"] = {
          {
             arch = "installed",
             commands = {},

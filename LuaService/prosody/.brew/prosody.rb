@@ -2,9 +2,10 @@ require "formula"
 
 class Prosody < Formula
   homepage "http://prosody.im"
-  url "https://prosody.im/downloads/source/prosody-0.9.10.tar.gz"
-  sha256 "4836eefed4d9bbb632cba24ac5bd8e9bc7c029a79d06084b00ffc70858d1662f"
-  version "0.9.10"
+
+  url "https://prosody.im/downloads/source/prosody-0.9.11.tar.gz"
+  sha256 "32bff4c323747f768c61b5c9a23790126d33258e96d4e589920b4c3d88b67256"
+  version "0.9.11"
 
   # url "https://hg.prosody.im/0.9/", :using => :hg
   # revision 1
@@ -19,7 +20,7 @@ class Prosody < Formula
   end
 
   resource "luarocks" do
-    url "http://keplerproject.github.io/luarocks/releases/luarocks-2.4.1.tar.gz"
+    url "http://luarocks.github.io/luarocks/releases/luarocks-2.4.1.tar.gz"
     sha256 "e429e0af9764bfd5cb640cac40f9d4ed1023fa17c052dff82ed0a41c05f3dcf9"
   end
 
@@ -29,14 +30,28 @@ class Prosody < Formula
     lua_prefix = Formula["lua51"].opt_prefix
     openssl = Formula["openssl"]
 
+    # set CFLAGS/LDFLAGS based on host OS (for shared libraries)
+    if OS.linux?
+        cflags = "-fPIC -I#{openssl.opt_include}"
+        ldflags = "-shared -L#{openssl.opt_lib}"
+    else
+        cflags = "-I#{openssl.opt_include}"
+        ldflags = "-bundle -undefined dynamic_lookup -L#{openssl.opt_lib}"
+    end
+
     args = ["--prefix=#{prefix}",
             "--sysconfdir=#{etc}/prosody",
             "--datadir=#{var}/lib/prosody",
             "--with-lua=#{lua_prefix}",
             "--with-lua-include=#{lua_prefix}/include/lua5.1",
             "--runwith=lua5.1",
-            "--cflags=-I#{openssl.opt_include}",
-            "--ldflags=-bundle -undefined dynamic_lookup -L#{openssl.opt_lib}"]
+            "--cflags=#{cflags}",
+            "--ldflags=#{ldflags}"]
+
+    # FIXME remove in next Prosody release, fixing a GNUism
+    inreplace 'certs/Makefile' do |s|
+      s.sub! '@chmod 400 $@ -c', '@chmod 400 $@'
+    end
 
     system "./configure", *args
     system "make"
@@ -94,14 +109,15 @@ class Prosody < Formula
     end
 
     system "#{bin}/prosody-luarocks", "install", "luasocket"
-    system "#{bin}/prosody-luarocks", "install", "luasec", "0.5.1"
+    system "#{bin}/prosody-luarocks", "install", "luasec"
     system "#{bin}/prosody-luarocks", "install", "luafilesystem"
     system "#{bin}/prosody-luarocks", "install", "luaexpat", "EXPAT_DIR=#{Formula["expat"].opt_prefix}"
     # system "#{bin}/prosody-luarocks", "install", "lua-zlib"
   end
 
+  # TODO more detailed
   def caveats; <<-EOS.undent
-    TODO: proper docs
+    Prosody configs in: #{etc}/prosody
     Rocks install to: #{libexec}/lib/luarocks/rocks
 
     You may need to run `prosody-luarocks install` inside the Homebrew build

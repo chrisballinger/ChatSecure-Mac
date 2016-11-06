@@ -8,15 +8,7 @@
 
 module("dependencies", package.seeall)
 
-function softreq(...)
-	local status, err =  pcall(require, ...);
-	print("softreq: ", status, err, ...);
-	if status then
-		return err;
-	else 
-		return nil, err; 
-	end 
-end
+function softreq(...) local ok, lib =  pcall(require, ...); if ok then return lib; else return nil, lib; end end
 
 -- Required to be able to find packages installed with luarocks
 if not softreq "luarocks.loader" then -- LuaRocks 2.x
@@ -68,10 +60,7 @@ function check_dependencies()
 	local fatal;
 	
 	local lxp = softreq "lxp"
-
-    print("path: ", package.path)
-    print("cpath: ", package.cpath)
-
+	
 	if not lxp then
 		missingdep("luaexpat", {
 				["Debian/Ubuntu"] = "sudo apt-get install liblua5.1-expat0";
@@ -110,6 +99,9 @@ function check_dependencies()
 				["luarocks"] = "luarocks install luasec";
 				["Source"] = "http://www.inf.puc-rio.br/~brunoos/luasec/";
 			}, "SSL/TLS support will not be available");
+	elseif not _G.ssl then
+		_G.ssl = ssl;
+		_G.ssl.context = require "ssl.context";
 	end
 	
 	local encodings, err = softreq "util.encodings"

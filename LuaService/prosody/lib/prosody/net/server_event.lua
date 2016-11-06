@@ -289,8 +289,9 @@ do
 
 	function interface_mt:resume()
 		self:_lock(self.nointerface, false, self.nowriting);
-		if not self.eventread then
+		if self.readcallback and not self.eventread then
 			self.eventread = addevent( base, self.conn, EV_READ, self.readcallback, cfg.READ_TIMEOUT );  -- register callback
+			return true;
 		end
 	end
 
@@ -544,8 +545,11 @@ do
 					elseif interface.startsslcallback then  -- start ssl connection if needed
 						debug "starting ssl handshake after writing"
 						interface.eventstarthandshake = addevent( base, nil, EV_TIMEOUT, interface.startsslcallback, 0 )
+					elseif interface.writebufferlen ~= 0 then
+						-- data possibly written from ondrain
+						return EV_WRITE, cfg.WRITE_TIMEOUT
 					elseif interface.eventreadtimeout then
-						return EV_WRITE, EV_TIMEOUT
+						return EV_WRITE, cfg.WRITE_TIMEOUT
 					end
 					interface.eventwrite = nil
 					return -1

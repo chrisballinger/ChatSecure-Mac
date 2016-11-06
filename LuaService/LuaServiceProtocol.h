@@ -12,10 +12,23 @@ NS_ASSUME_NONNULL_BEGIN
 // The protocol that this service will vend as its API. This header file will also need to be visible to the process hosting the service.
 @protocol LuaServiceProtocol
 
+/** Path for prosody.cfg.lua generated from template file */
++ (NSString*) configurationPath;
 
-- (void)runProsody:(void (^)(NSString *result,  NSError* _Nullable error))completion;
-/** Runs a script at path. containingDir is usually the directory above the script */
-- (void)runPath:(NSString*)scriptPath containingDir:(NSString*)containingDir completion:(void (^)(NSString *result,  NSError* _Nullable error))completion;
+/** Directory containing TLS .crt and .key */
++ (NSString*) tlsDirectory;
++ (NSString*) tlsCertPathForDomain:(NSString*)domain;
++ (NSString*) tlsKeyPathForDomain:(NSString*)domain;
+
+/** General data storage directory https://prosody.im/doc/configure#general_server_settings */
++ (NSString*) dataPath;
+
+/** Create prosody.cfg.lua from template. Will generate certs if not present. */
+- (void)generateConfigurationWithOnionAddress:(NSString*)onionAddress allowRegistration:(BOOL)allowRegistration completion:(void (^)(BOOL success,  NSError* _Nullable error))completion;
+
+/** Runs Prosody. Make sure to call generateConfiguration first, every time. */
+- (void)runProsody:(void (^)(BOOL success,  NSError* _Nullable error))completion;
+
 
 - (void) terminate;
     

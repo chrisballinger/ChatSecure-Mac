@@ -13,6 +13,7 @@
 		9F8BE290ACDEAA50BAD76427 /* Pods_ChatSecurePods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D86B0669B14DA4230A9402 /* Pods_ChatSecurePods_LuaService.framework */; };
 		B9A4EFB73BBF37C468224C16 /* Pods_TorService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5A9457B4735C593DADB0A8 /* Pods_TorService.framework */; };
 		B9E3A90C96FBFF1FA8DF8C18 /* Pods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */; };
+		D907F2191DCFAEB400EFCE97 /* prosody.cfg.lua.template in Resources */ = {isa = PBXBuildFile; fileRef = D907F2181DCFAEB400EFCE97 /* prosody.cfg.lua.template */; };
 		D93BAA721A1DAF050087F30E /* TorService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA711A1DAF050087F30E /* TorService.m */; };
 		D93BAA741A1DAF050087F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA731A1DAF050087F30E /* main.m */; };
 		D93BAA861A1DAF110087F30E /* XMPPService.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BAA851A1DAF110087F30E /* XMPPService.m */; };
@@ -115,6 +116,7 @@
 		D4089C40E33E3E2AC8120265 /* Pods-ChatSecurePods-LuaService-LuaServiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-LuaService-LuaServiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-LuaService-LuaServiceTests/Pods-ChatSecurePods-LuaService-LuaServiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		D5C09B5CAF59D3AC732E478E /* Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-ChatSecure-ChatSecureTests/Pods-ChatSecurePods-ChatSecure-ChatSecureTests.release.xcconfig"; sourceTree = "<group>"; };
 		D5D472206986F94AF84CCFE3 /* Pods-ChatSecurePods-LuaService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSecurePods-LuaService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSecurePods-LuaService/Pods-ChatSecurePods-LuaService.release.xcconfig"; sourceTree = "<group>"; };
+		D907F2181DCFAEB400EFCE97 /* prosody.cfg.lua.template */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prosody.cfg.lua.template; sourceTree = "<group>"; };
 		D93BAA501A1DAD3F0087F30E /* ChatSecure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ChatSecure.entitlements; sourceTree = "<group>"; };
 		D93BAA6B1A1DAF050087F30E /* TorService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = TorService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93BAA6E1A1DAF050087F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 		D9A266F31DC57F71003616CF /* LuaService */ = {
 			isa = PBXGroup;
 			children = (
+				D907F2181DCFAEB400EFCE97 /* prosody.cfg.lua.template */,
 				D9A267201DC70CD0003616CF /* libssl.1.0.0.dylib */,
 				D9A2671E1DC70C9A003616CF /* libexpat.1.dylib */,
 				D9A267181DC6E683003616CF /* libcrypto.1.0.0.dylib */,
@@ -658,6 +661,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D907F2191DCFAEB400EFCE97 /* prosody.cfg.lua.template in Resources */,
 				D9A267051DC68A7A003616CF /* prosody in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
