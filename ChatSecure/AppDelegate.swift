@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         DDLog.add(DDTTYLogger.sharedInstance())
         DDLog.add(DDASLLogger.sharedInstance())
-        type(of: self).startItAll()
+        //type(of: self).startItAll()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

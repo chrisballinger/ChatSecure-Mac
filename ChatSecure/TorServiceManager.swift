@@ -9,7 +9,7 @@
 import Cocoa
 
 public class TorServiceManager: NSObject {
-    private let connection = NSXPCConnection(serviceName: "com.chrisballinger.TorService")
+    private let connection = NSXPCConnection(serviceName: "org.chatsecure.TorService")
     private let torService: TorServiceProtocol
     
     private let xmppServerPort: UInt16 = 5269
