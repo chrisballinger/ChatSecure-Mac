@@ -76,6 +76,27 @@ cp /usr/local/opt/expat/lib/libexpat.1.dylib LuaService/vendor
 
 * `otool -L library.so` to print linked libraries
 * `install_name_tool` Changing dylib loading paths http://stackoverflow.com/a/1937331/805882
+* Change library names to `@rpath/library.dylib`
+
+```
+cd LuaService/vendor
+install_name_tool -id @rpath/libcrypto.1.0.0.dylib libcrypto.1.0.0.dylib
+install_name_tool -id @rpath/libexpat.1.dylib libexpat.1.dylib 
+install_name_tool -id @rpath/libidn.11.dylib libidn.11.dylib
+install_name_tool -id @rpath/libssl.1.0.0.dylib libssl.1.0.0.dylib
+install_name_tool -change /usr/local/Cellar/openssl/1.0.2j/lib/libcrypto.1.0.0.dylib @rpath/libcrypto.1.0.0.dylib libssl.1.0.0.dylib
+
+cd LuaService/prosody/libexec/lib/lua/5.1
+install_name_tool -change /usr/local/opt/openssl/lib/libssl.1.0.0.dylib @rpath/libssl.1.0.0.dylib ssl.so
+install_name_tool -change /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib @rpath/libcrypto.1.0.0.dylib ssl.so
+install_name_tool -change /usr/local/opt/expat/lib/libexpat.1.dylib @rpath/libexpat.1.dylib lxp.so
+
+cd LuaService/prosody/lib/prosody/util
+chmod 744 encodings.so
+chmod 744 hashes.so
+install_name_tool -change /usr/local/opt/libidn/lib/libidn.11.dylib @rpath/libidn.11.dylib encodings.so
+install_name_tool -change /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib @rpath/libcrypto.1.0.0.dylib hashes.so
+```
 
 
 ## TODO

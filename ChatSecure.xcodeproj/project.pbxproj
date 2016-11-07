@@ -10,7 +10,6 @@
 		155E6EF8A104E177B6E2FF25 /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDF4F655F1018CC870D64AF /* Pods_ChatSecurePods_ChatSecure_ChatSecureTests.framework */; };
 		2266CD74B5038C93A8F9D38A /* Pods_ChatSecurePods_ChatSecure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FC3007FB18A4CC66E49798 /* Pods_ChatSecurePods_ChatSecure.framework */; };
 		3ADCEDE3C4F6424088C466F5 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE29B75FBC11CEEDA632AE1 /* Pods_ChatSecurePods_LuaService_LuaServiceTests.framework */; };
-		9F8BE290ACDEAA50BAD76427 /* Pods_ChatSecurePods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D86B0669B14DA4230A9402 /* Pods_ChatSecurePods_LuaService.framework */; };
 		B9A4EFB73BBF37C468224C16 /* Pods_TorService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5A9457B4735C593DADB0A8 /* Pods_TorService.framework */; };
 		B9E3A90C96FBFF1FA8DF8C18 /* Pods_LuaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573B5B08A1AE120849721BC9 /* Pods_LuaService.framework */; };
 		D907F2191DCFAEB400EFCE97 /* prosody.cfg.lua.template in Resources */ = {isa = PBXBuildFile; fileRef = D907F2181DCFAEB400EFCE97 /* prosody.cfg.lua.template */; };
@@ -43,6 +42,10 @@
 		D9D2C1A11DBDA47F00962A25 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A01DBDA47F00962A25 /* MessagesViewController.swift */; };
 		D9D2C1A41DBDA49D00962A25 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D2C1A21DBDA49D00962A25 /* ConversationsViewController.swift */; };
 		D9EA35A41DD00208003C7CCE /* ProsodyServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA35A31DD00208003C7CCE /* ProsodyServerViewController.swift */; };
+		D9EA35AF1DD02F55003C7CCE /* libssl.1.0.0.dylib in Copy Prosody Dylib Dependencies */ = {isa = PBXBuildFile; fileRef = D9A267201DC70CD0003616CF /* libssl.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D9EA35B01DD02F55003C7CCE /* libexpat.1.dylib in Copy Prosody Dylib Dependencies */ = {isa = PBXBuildFile; fileRef = D9A2671E1DC70C9A003616CF /* libexpat.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D9EA35B11DD02F55003C7CCE /* libcrypto.1.0.0.dylib in Copy Prosody Dylib Dependencies */ = {isa = PBXBuildFile; fileRef = D9A267181DC6E683003616CF /* libcrypto.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D9EA35B21DD02F55003C7CCE /* libidn.11.dylib in Copy Prosody Dylib Dependencies */ = {isa = PBXBuildFile; fileRef = D9A267191DC6E684003616CF /* libidn.11.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D9ECB7F31DC843C5001B0431 /* TorServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECB7F21DC843C5001B0431 /* TorServiceManager.swift */; };
 		E2D7252B7294BB4C1F6C75C1 /* Pods_ChatSecurePods_XMPPService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF5D74F7AAC1AD1FAA6EC85 /* Pods_ChatSecurePods_XMPPService.framework */; };
 		F60CAB2FCFF9DAF43BD5E129 /* Pods_LuaService_LuaServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85FEF3C3703E2628B8B229C /* Pods_LuaService_LuaServiceTests.framework */; };
@@ -91,6 +94,20 @@
 				D9A266FD1DC57F71003616CF /* LuaService.xpc in Embed XPC Services */,
 			);
 			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9EA35AE1DD02F45003C7CCE /* Copy Prosody Dylib Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D9EA35AF1DD02F55003C7CCE /* libssl.1.0.0.dylib in Copy Prosody Dylib Dependencies */,
+				D9EA35B01DD02F55003C7CCE /* libexpat.1.dylib in Copy Prosody Dylib Dependencies */,
+				D9EA35B11DD02F55003C7CCE /* libcrypto.1.0.0.dylib in Copy Prosody Dylib Dependencies */,
+				D9EA35B21DD02F55003C7CCE /* libidn.11.dylib in Copy Prosody Dylib Dependencies */,
+			);
+			name = "Copy Prosody Dylib Dependencies";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -202,7 +219,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8BE290ACDEAA50BAD76427 /* Pods_ChatSecurePods_LuaService.framework in Frameworks */,
 				B9E3A90C96FBFF1FA8DF8C18 /* Pods_LuaService.framework in Frameworks */,
 				D9A267211DC70CD0003616CF /* libssl.1.0.0.dylib in Frameworks */,
 				D9A2671C1DC7069B003616CF /* libcrypto.1.0.0.dylib in Frameworks */,
@@ -482,6 +498,7 @@
 				D9A266EF1DC57F71003616CF /* Frameworks */,
 				D9A266F01DC57F71003616CF /* Resources */,
 				87F7EDC98A0E6F3579BC70C3 /* [CP] Copy Pods Resources */,
+				D9EA35AE1DD02F45003C7CCE /* Copy Prosody Dylib Dependencies */,
 			);
 			buildRules = (
 			);
@@ -1293,6 +1310,10 @@
 				DEVELOPMENT_TEAM = 4T8JLQR6GR;
 				INFOPLIST_FILE = ChatSecure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LuaService/vendor",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.ChatSecure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1316,6 +1337,10 @@
 				DEVELOPMENT_TEAM = 4T8JLQR6GR;
 				INFOPLIST_FILE = ChatSecure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LuaService/vendor",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.chatsecure.ChatSecure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
