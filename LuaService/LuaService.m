@@ -15,6 +15,7 @@
 
 @interface LuaService()
 @property (nonatomic, readonly) lua_State *L;
+@property (nonatomic, strong, readonly) NSOperationQueue *luaQueue;
 @end
 
 @implementation LuaService
@@ -22,16 +23,13 @@
 
 
 - (void) dealloc {
-
     [self terminate];
 }
 
 - (void) terminate {
-    if (L) {
-        lua_close(L);
-        L = NULL;
-    }
+    [self.luaQueue cancelAllOperations];
     [[NSProcessInfo processInfo] enableAutomaticTermination:@"lua"];
+    exit(0);
 }
 
 
@@ -40,6 +38,9 @@
     if (self = [super init]) {
         [NSProcessInfo processInfo].automaticTerminationSupportEnabled = YES;
         [[NSProcessInfo processInfo] disableAutomaticTermination:@"lua"];
+        _luaQueue = [[NSOperationQueue alloc] init];
+        self.luaQueue.maxConcurrentOperationCount = 1;
+        
         /*
          * All Lua contexts are held in this structure. We work with it almost
          * all the time.
@@ -51,10 +52,12 @@
 }
 
 - (void)runProsody:(void (^)(BOOL success,  NSError* _Nullable error))completion {
-    NSString *scriptPath = [[self class] prosodyExe];
-    NSError *error = nil;
-    BOOL status = [[self class] runScript:scriptPath luaState:L error:&error];
-    completion(status, error);
+    [self.luaQueue addOperationWithBlock:^{
+        NSString *scriptPath = [[self class] prosodyExe];
+        NSError *error = nil;
+        BOOL status = [[self class] runScript:scriptPath luaState:L error:&error];
+        completion(status, error);
+    }];
 }
 
 #pragma mark Configuration Script Generation
@@ -83,50 +86,52 @@
 }
 
 
-- (void)generateConfigurationWithOnionAddress:(NSString*)onionAddress allowRegistration:(BOOL)allowRegistration completion:(void (^)(BOOL success,  NSError* _Nullable error))completion {
-    // Remove whitespace
-    onionAddress = [onionAddress stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    NSString *templatePath = [bundle pathForResource:@"prosody.cfg.lua" ofType:@"template"];
-    NSParameterAssert(templatePath != nil);
-    if (!templatePath) {
-        completion(NO, [[self class] errorWithDescription:@"No prosody.cfg.lua template" code:2]);
-        return;
-    }
-    NSError *error = nil;
-    NSString *template = [NSString stringWithContentsOfFile:templatePath encoding:NSUTF8StringEncoding error:&error];
-    if (error) {
-        completion(NO, error);
-        return;
-    }
-    NSString *allowRegistrationStr = @"false";
-    if (allowRegistration) {
-        allowRegistrationStr = @"true";
-    }
-    template = [template stringByReplacingOccurrencesOfString:@"<<ALLOW_REGISTRATION>>" withString:allowRegistrationStr];
-    NSString *tlsCertPath = [[self class] tlsCertPathForDomain:onionAddress];
-    NSString *tlsKeyPath = [[self class] tlsKeyPathForDomain:onionAddress];
-    template = [template stringByReplacingOccurrencesOfString:@"<<TLS_CERT_PATH>>" withString:tlsCertPath];
-    template = [template stringByReplacingOccurrencesOfString:@"<<TLS_KEY_PATH>>" withString:tlsKeyPath];
-    template = [template stringByReplacingOccurrencesOfString:@"<<ONION_ADDRESS>>" withString:onionAddress];
-    
-    BOOL result = [template writeToFile:[[self class] configurationPath] atomically:YES encoding:NSUTF8StringEncoding error:&error];
-    if (error) {
-        completion(result, error);
-        return;
-    }
-    
-    // Check if certs exist, if not, generate certs
-    if (![[NSFileManager defaultManager] fileExistsAtPath:tlsCertPath] ||
-        ![[NSFileManager defaultManager] fileExistsAtPath:tlsKeyPath]) {
-        result = [[self class] generateSelfSignedCertForDomain:onionAddress error:&error];
+- (void)generateConfigurationWithOnionAddress:(NSString*)inOnionAddress allowRegistration:(BOOL)allowRegistration completion:(void (^)(BOOL success,  NSError* _Nullable error))completion {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Remove whitespace
+        NSString *onionAddress = [inOnionAddress stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+        NSString *templatePath = [bundle pathForResource:@"prosody.cfg.lua" ofType:@"template"];
+        NSParameterAssert(templatePath != nil);
+        if (!templatePath) {
+            completion(NO, [[self class] errorWithDescription:@"No prosody.cfg.lua template" code:2]);
+            return;
+        }
+        NSError *error = nil;
+        NSString *template = [NSString stringWithContentsOfFile:templatePath encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            completion(NO, error);
+            return;
+        }
+        NSString *allowRegistrationStr = @"false";
+        if (allowRegistration) {
+            allowRegistrationStr = @"true";
+        }
+        template = [template stringByReplacingOccurrencesOfString:@"<<ALLOW_REGISTRATION>>" withString:allowRegistrationStr];
+        NSString *tlsCertPath = [[self class] tlsCertPathForDomain:onionAddress];
+        NSString *tlsKeyPath = [[self class] tlsKeyPathForDomain:onionAddress];
+        template = [template stringByReplacingOccurrencesOfString:@"<<TLS_CERT_PATH>>" withString:tlsCertPath];
+        template = [template stringByReplacingOccurrencesOfString:@"<<TLS_KEY_PATH>>" withString:tlsKeyPath];
+        template = [template stringByReplacingOccurrencesOfString:@"<<ONION_ADDRESS>>" withString:onionAddress];
+        
+        BOOL result = [template writeToFile:[[self class] configurationPath] atomically:YES encoding:NSUTF8StringEncoding error:&error];
         if (error) {
             completion(result, error);
             return;
         }
-    }
-    completion(YES, nil);
+        
+        // Check if certs exist, if not, generate certs
+        if (![[NSFileManager defaultManager] fileExistsAtPath:tlsCertPath] ||
+            ![[NSFileManager defaultManager] fileExistsAtPath:tlsKeyPath]) {
+            result = [[self class] generateSelfSignedCertForDomain:onionAddress error:&error];
+            if (error) {
+                completion(result, error);
+                return;
+            }
+        }
+        completion(YES, nil);
+    });
 }
 
 #pragma mark prosody/prosodyctl runner

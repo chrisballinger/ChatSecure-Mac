@@ -11,29 +11,47 @@
 @import CPAProxy;
 
 @interface TorService()
-@property (nonatomic, strong, readonly) CPAProxyManager *torManager;
+@property (nonatomic, strong, nullable) CPAProxyManager *torManager;
+@property (nonatomic) BOOL invalid;
 @end
 
 @implementation TorService
 
 - (void) dealloc {
-    [[NSProcessInfo processInfo] enableAutomaticTermination:@"tor"];
+    [self teardown];
 }
 
 - (instancetype) init {
     if (self = [super init]) {
         [NSProcessInfo processInfo].automaticTerminationSupportEnabled = YES;
         [[NSProcessInfo processInfo] disableAutomaticTermination:@"tor"];
-        
-        
     }
     return self;
 }
 
-- (void)setupWithCompletion:(void(^ _Nonnull )(NSString * _Nullable socksHost, NSUInteger socksPort, NSString * _Nullable onionService, NSError * _Nullable error))completion internalPort:(uint16_t)internalPort externalPort:(uint16_t)externalPort serviceDirectoryName:(NSString *)serviceDirectoryName {
-    if (_torManager) {
-        completion(nil, 0, nil, [NSError errorWithDomain:@"TorService" code:0 userInfo:@{NSLocalizedFailureReasonErrorKey: @"Already setup."}]);
+- (void)teardown {
+    if (_invalid) {
         return;
+    }
+    _invalid = YES;
+    [self.torManager cpa_sendSignal:@"SHUTDOWN" completionBlock:^(NSString *responseString, NSError *error) {
+        NSLog(@"Tor Shutdown: %@ %@", responseString, error);
+    } completionQueue:dispatch_get_main_queue()];
+    //[[NSProcessInfo processInfo] enableAutomaticTermination:@"tor"];
+}
+
+- (void)setupWithCompletion:(void(^ _Nonnull )(NSString * _Nullable socksHost, NSUInteger socksPort, NSString * _Nullable onionService, NSError * _Nullable error))completion internalPort:(uint16_t)internalPort externalPort:(uint16_t)externalPort serviceDirectoryName:(NSString *)serviceDirectoryName {
+    if (_invalid) {
+        return;
+    }
+    if (_torManager) {
+        CPAStatus status = self.torManager.status;
+        if (status == CPAStatusOpen) {
+            completion(nil, 0, nil, [NSError errorWithDomain:@"TorService" code:0 userInfo:@{NSLocalizedFailureReasonErrorKey: @"Already setup."}]);
+            return;
+        } else if (status == CPAStatusConnecting) {
+            return;
+        }
     }
     
     NSError *error = nil;

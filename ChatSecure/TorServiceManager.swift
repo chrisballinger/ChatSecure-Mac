@@ -15,6 +15,7 @@ public class TorServiceManager: NSObject {
     private let xmppServerPort: UInt16 = 5269
     
     deinit {
+        torService.teardown()
         connection.invalidate()
     }
     
@@ -23,7 +24,7 @@ public class TorServiceManager: NSObject {
         //connection.exportedObject = self
         connection.resume()
         torService = connection.remoteObjectProxyWithErrorHandler({ (error: Error) in
-            NSLog("error: %@", error as NSError)
+            NSLog("torService XPC error: %@", error as NSError)
         }) as! TorServiceProtocol
     }
     

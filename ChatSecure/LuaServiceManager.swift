@@ -13,6 +13,7 @@ public class LuaServiceManager: NSObject {
     private let luaService: LuaServiceProtocol
     
     deinit {
+        luaService.terminate()
         connection.invalidate()
     }
     
@@ -21,7 +22,7 @@ public class LuaServiceManager: NSObject {
         //connection.exportedObject = self
         connection.resume()
         luaService = connection.remoteObjectProxyWithErrorHandler({ (error: Error) in
-            NSLog("error: %@", error as NSError)
+            NSLog("luaService XPC error: %@", error as NSError)
         }) as! LuaServiceProtocol
     }
     
