@@ -16,7 +16,7 @@ Further reading:
 
 ## Installation
 
-You'll need [Cocoapods](http://cocoapods.org) for most of our dependencies.
+You'll need [CocoaPods](http://cocoapods.org) for most of our dependencies.
     
     $ gem install cocoapods
     
@@ -35,7 +35,7 @@ Now you'll need to build the dependencies.
     
 Open `ChatSecure.xcworkspace` in Xcode and build. 
 
-*Note*: **Don't open the `.xcodeproj`** because we're using Cocoapods.
+*Note*: **Don't open the `.xcodeproj`** because we're using CocoaPods.
 
 If you're still having trouble compiling check out the Travis-CI build status and `.travis.yml` file.
 
